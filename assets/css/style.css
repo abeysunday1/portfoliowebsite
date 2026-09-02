@@ -3,6 +3,12 @@
    Digital Marketing · SEO · Lead Generation · AI Marketing
    ========================================================= */
 
+/* Native cross-document page transitions (progressive enhancement —
+   ignored by browsers that don't support it yet, no fallback needed) */
+@view-transition{
+  navigation: auto;
+}
+
 /* ---------- Design Tokens ---------- */
 :root{
   /* Colors */
@@ -128,14 +134,21 @@ section{ padding: var(--section-y) 0; }
   position: sticky; top:0; z-index: 100;
   background: rgba(255,255,255,0.9);
   backdrop-filter: saturate(180%) blur(14px);
-  border-bottom: 1px solid var(--gray-200);
+  border-bottom: 1px solid transparent;
+  transition: box-shadow .3s ease, border-color .3s ease;
+}
+.site-header.is-scrolled{
+  border-bottom-color: var(--gray-200);
+  box-shadow: var(--shadow-sm);
 }
 .nav{
   display:flex; align-items:center; justify-content:space-between;
   padding: 16px 24px;
   max-width: var(--container-w);
   margin: 0 auto;
+  transition: padding .3s ease;
 }
+.site-header.is-scrolled .nav{ padding-top:11px; padding-bottom:11px; }
 .brand{ display:flex; align-items:center; gap:12px; font-family: var(--font-heading); font-weight:700; color: var(--navy); font-size:1.05rem; }
 .brand-mark{
   width:40px; height:40px; border-radius: 11px;
@@ -164,19 +177,57 @@ section{ padding: var(--section-y) 0; }
 
 /* ---------- Hero ---------- */
 .hero{
+  position: relative;
   padding: clamp(56px, 9vw, 96px) 0 var(--section-y);
-  background:
-    radial-gradient(circle at 85% 10%, rgba(0,194,168,0.10), transparent 45%),
-    var(--off-white);
+  background: var(--off-white);
   overflow:hidden;
 }
+.hero::before, .hero::after{
+  content:''; position:absolute; border-radius:50%; filter: blur(60px);
+  opacity:0.55; pointer-events:none;
+}
+.hero::before{
+  width: 480px; height: 480px; top: -160px; right: -120px;
+  background: radial-gradient(circle, rgba(0,194,168,0.28), transparent 70%);
+  animation: orbit-a 22s ease-in-out infinite;
+}
+.hero::after{
+  width: 360px; height: 360px; bottom: -140px; left: -100px;
+  background: radial-gradient(circle, rgba(30,42,69,0.16), transparent 70%);
+  animation: orbit-b 26s ease-in-out infinite;
+}
+@keyframes orbit-a{
+  0%, 100%{ transform: translate(0,0) scale(1); }
+  50%{ transform: translate(-40px, 50px) scale(1.12); }
+}
+@keyframes orbit-b{
+  0%, 100%{ transform: translate(0,0) scale(1); }
+  50%{ transform: translate(30px, -40px) scale(1.08); }
+}
 .hero-grid{
+  position: relative; z-index:1;
   display:grid; grid-template-columns: 1.05fr 0.9fr; gap: 56px; align-items:center;
 }
 .hero-copy .eyebrow{ margin-bottom: 22px; }
 .hero-copy h1{ margin-bottom: 20px; }
 .hero-copy .lead{ font-size: 1.15rem; color: var(--gray-500); max-width: 520px; margin-bottom: 32px; }
 .hero-cta{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom: 36px; }
+.hero-copy > *{
+  opacity:0; transform: translateY(18px);
+  animation: hero-in .7s cubic-bezier(.16,.8,.24,1) forwards;
+}
+.hero-copy .eyebrow{ animation-delay: .05s; }
+.hero-copy h1{ animation-delay: .15s; }
+.hero-copy .lead{ animation-delay: .27s; }
+.hero-copy .hero-cta{ animation-delay: .39s; }
+.hero-copy .hero-strip{ animation-delay: .5s; }
+.hero-visual{
+  opacity:0; transform: translateY(18px) scale(.97);
+  animation: hero-in .8s cubic-bezier(.16,.8,.24,1) .3s forwards;
+}
+@keyframes hero-in{
+  to{ opacity:1; transform: none; }
+}
 .hero-strip{
   display:flex; flex-wrap:wrap; gap: 10px 0; align-items:center;
   font-size: 0.92rem; color: var(--gray-500); font-weight:500;
@@ -319,6 +370,24 @@ section{ padding: var(--section-y) 0; }
   transition: all .18s ease;
 }
 .tool-badge:hover{ border-color: var(--accent); color: var(--navy); background: var(--white); }
+
+/* Auto-scrolling tools ticker — JS duplicates .tools-grid into this track;
+   falls back to the plain static grid above if JS doesn't run or motion is reduced. */
+.tools-ticker{
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.tools-ticker .ticker-track{
+  display:flex; width: max-content; gap: 16px;
+  animation: ticker-scroll 32s linear infinite;
+}
+.tools-ticker:hover .ticker-track{ animation-play-state: paused; }
+.tools-ticker .tool-badge{ flex: 0 0 auto; min-width: 160px; }
+@keyframes ticker-scroll{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-50%); }
+}
 
 /* Why work with me */
 .why-section{ background: var(--navy); color: var(--white); }
@@ -505,3 +574,40 @@ section{ padding: var(--section-y) 0; }
 .nav-scrim{ position:fixed; inset:0; background: rgba(11,18,32,0.4); opacity:0; pointer-events:none; transition: opacity .28s ease; z-index:190; }
 .nav-scrim.open{ opacity:1; pointer-events:auto; }
 .drawer-close{ align-self:flex-end; width:36px; height:36px; border:none; background: var(--gray-100); border-radius:8px; font-size:1.1rem; cursor:pointer; margin-bottom:12px; }
+
+/* ---------- Scroll-reveal motion system ---------- */
+/* main.js tags eligible elements with .reveal and observes them; .is-visible
+   is added once each element crosses the viewport threshold. Elements start
+   in their resting (visible) state by default so the page is never empty
+   before JS runs — .reveal only hides things after JS confirms it's ready. */
+.js-motion-ready .reveal{
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .6s cubic-bezier(.16,.8,.24,1), transform .6s cubic-bezier(.16,.8,.24,1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+.js-motion-ready .reveal.is-visible{
+  opacity: 1;
+  transform: none;
+}
+
+/* Process track connector: fills in as its section becomes visible */
+.process-track{ --connector: 0; }
+.process-track .process-step:not(:last-child)::after{
+  transform: scaleX(var(--connector));
+  transform-origin: left;
+  transition: transform .8s cubic-bezier(.16,.8,.24,1) .3s;
+}
+.process-track.is-visible{ --connector: 1; }
+
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .js-motion-ready .reveal{ opacity:1; transform:none; }
+  .tools-ticker .ticker-track{ animation: none; }
+  .hero::before, .hero::after{ animation: none; }
+}

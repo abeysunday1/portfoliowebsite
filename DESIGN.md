@@ -188,12 +188,17 @@ Only one H1 per page (page title / hero headline); services, case studies and ti
 
 ## 11. Recommended Animations
 
-Keep animation minimal and purposeful, per the brief:
-- Card hover: subtle `translateY(-4px)` lift + soft shadow (already in CSS) — in Elementor, use **Hover Animations → Grow/Float** at low intensity, no rotation/flip effects.
-- On-scroll entrance: simple fade-up (Elementor **Motion Effects → Entrance Animation: Fade In Up**), staggered slightly across grid items — avoid bounce/elastic easing.
-- Sticky header on scroll (Motion Effects → Sticky), no shrink/color-flash gimmicks.
-- Button hover: color shift + 2px lift (already implemented) — no pulsing or looping animations anywhere on the site.
-- Avoid: auto-playing carousels, parallax on text-heavy sections, animated gradients, and any animation that delays reading the hero headline.
+Updated per client request for a "motion" site rather than a static one. Motion is still purposeful and premium — nothing bounces, spins, or loops attention-grabbingly — but the site now actively moves. Implemented in `assets/css/style.css` + `assets/js/main.js`, all gated behind `prefers-reduced-motion`:
+
+- **Hero entrance:** headline, subtext, buttons and the photo panel fade/slide in on load, staggered ~120ms apart (`hero-in` keyframes) — in Elementor, use **Motion Effects → Entrance Animation** per widget with staggered delays, or Elementor Pro's animation delay field.
+- **Animated hero background:** two soft blurred gradient orbs drift slowly behind the hero content on an infinite loop (`orbit-a`/`orbit-b` keyframes, 22–26s cycles) — in Elementor, approximate with two absolutely-positioned shape divs and CSS animation via the Custom CSS panel, or a subtle Lottie loop (Elementor Pro **Lottie** widget) if a designer produces one.
+- **Scroll-reveal:** cards, section headers, timeline entries and CTAs fade/slide up into place as they enter the viewport, staggered by sibling order (`IntersectionObserver` in `main.js`) — in Elementor, use **Motion Effects → Entrance Animation: Fade In Up** per widget/container, staggered manually via each widget's animation delay.
+- **Process connector fill:** the line joining the 5 process steps draws in (scaleX 0→1) once the section scrolls into view, rather than appearing static — recreate in Elementor with a thin Divider widget plus a Motion Effects entrance animation set to "Grow".
+- **Sticky header shrink:** the header gains a shadow/border and tightens its padding after ~8px of scroll (plain scroll-listener class toggle) — in Elementor, Motion Effects → Sticky, with a secondary "shrink on scroll" effect if the theme/builder supports it (or a small custom-CSS snippet keyed to a scroll class).
+- **Tools ticker:** the Tools & Technologies badges auto-scroll in an infinite horizontal loop, pausing on hover, with a soft edge fade mask — in Elementor, use a **Marquee/Logo Carousel** widget (native in newer Elementor Pro versions) or a lightweight marquee plugin; keep speed slow (~30s per loop) so logos stay readable.
+- **Native page transitions:** `@view-transition { navigation: auto; }` is set in the site CSS, which triggers the browser-native cross-document View Transitions API in supporting browsers (Chrome/Edge 126+) for a soft cross-fade between pages — no build required; it's simply ignored (no error, no fallback needed) in browsers that don't yet support it. WordPress can carry this the same way via a small snippet in the theme's global CSS.
+- **Hover interactions (unchanged):** card lift + shadow, button color shift + 2px lift.
+- **Still avoided:** auto-playing content carousels, parallax scrubbing on text-heavy sections, spinning/bouncing effects, and anything that delays reading the hero headline on first paint (all animated elements are visible at rest before/without JS — motion is additive, never load-bearing for content visibility).
 
 ---
 
