@@ -31,7 +31,7 @@ rounded:
   md: "14px"
   lg: "20px"
 components:
-  buttons: "Pill radius. Primary: solid electric-blue fill, navy text. Secondary: solid navy fill, white text. Outline variant on light or dark grounds. 2px lift plus soft shadow on hover."
+  buttons: "Pill radius. Primary: solid electric-blue fill (#3B82F6), off-white text (#F8FAFC) - the only solid-fill button style on the site. Secondary/tertiary: outline variant (transparent fill, border + text in navy or white depending on ground) - never a second solid fill color. 2px lift plus soft shadow on hover."
   cards: "20px radius, 1px hairline border, white surface, no shadow at rest, soft shadow plus 4px lift on hover. Used for genuinely grouped content, never stamped on every block."
 dials:
   variance: 0.5
@@ -75,13 +75,14 @@ One radius scale, held everywhere: buttons are full pill, cards and panels use 2
 
 ## Components
 
-Buttons: pill-shaped, electric-blue-fill primary with navy/white text (whichever contrasts), navy-fill secondary with white text, outline variant for tertiary actions on either light or dark grounds; every button lifts 2px with a soft shadow on hover. Cards: 20px radius, hairline border, white surface, flat at rest, lift plus shadow on hover; used for services, process steps, portfolio items, testimonials and stat metrics — not for every content block. Icon chips: small rounded-square electric-blue-tinted fills behind line icons, consistent across trust, services and why-work-with-me sections. Tool/category chips: compact (~150px) rounded cards, grouped under a small uppercase category label rather than left loose in one undifferentiated grid.
+Buttons: pill-shaped, electric-blue fill (#3B82F6) with off-white text (#F8FAFC) is the one and only solid-fill button style on the site — every primary CTA everywhere uses exactly this, never a navy or any other solid fill. Secondary/tertiary actions use the outline variant only (transparent fill, border + text in navy or white depending on the ground) — there is no second solid color tier. Every button lifts 2px with a soft shadow on hover. Cards: 20px radius, hairline border, white surface, flat at rest, lift plus shadow on hover; used for services, process steps, portfolio items, testimonials and stat metrics — not for every content block. Icon chips: small rounded-square electric-blue-tinted fills behind line icons, consistent across trust, services and why-work-with-me sections. Tool/category chips: compact (~150px) rounded cards, grouped under a small uppercase category label rather than left loose in one undifferentiated grid.
 
 ## Do's and Don'ts
 
 ### Do's
 - Do use the electric-blue accent for exactly one action per view (primary CTA, active nav link, or a single highlighted stat).
 - Do surface real, already-verified numbers from existing copy as a prominent animated stat strip rather than leaving them buried in body text — never invent one to fill a gap.
+- Do fold adjacent/emerging capabilities (e.g. AEO, GEO, LLMO alongside SEO) into the existing service's copy as one supporting sentence, not as their own cards or sections — the site's job is to read as a small number of coherent capabilities, not an ever-growing list of services.
 - Do keep sections alternating white/off-white grounds for rhythm.
 - Do hold every section to the 64px desktop / 40px mobile rhythm unless it is the hero band or a deliberate zero-top CTA composition.
 - Do load fonts as one combined, weight-scoped Google Fonts request (only the weights actually used) rather than per-family default requests that pull the full 18-variant range.
@@ -100,6 +101,7 @@ Buttons: pill-shaped, electric-blue-fill primary with navy/white text (whichever
 - Don't stack many single-category full-width sections back to back when they could be one section with internal clusters — each extra full-bleed section adds its own top/bottom padding overhead and makes the page feel longer than the content warrants.
 - Don't load a font weight the type scale doesn't actually use.
 - Don't leave a demo-template asset (logo, placeholder name, sample image) live after real content replaces it — audit for template remnants specifically, since they often don't show up in a text/content search (e.g. a name baked into an SVG logo's vector paths, or a legacy option a newer control silently defers to).
-- Don't trust a card's own width/width_tablet/width_mobile setting to produce a multi-column grid — verify with an actual rendered screenshot, not just a settings/data check, since a non-functional control here fails completely silently.
+- Don't trust a card's own width/width_tablet/width_mobile setting to produce a multi-column grid — verify with an actual rendered screenshot, not just a settings/data check, since a non-functional control here fails completely silently. This applies at every column count, not just 3+: 2-column 48%/48% splits (About capabilities, service-page Problem/Solution and Deliverables/Results panels) hit the identical bug and need the same `grid-2up` treatment — when auditing for this bug, check the full 10-90% width range, not just the 3+-column range.
+- Don't let two different "primary" button color choices coexist (e.g. one CTA using the navy/secondary global as its solid fill, another using blue/primary) — audit every button widget's resolved background color sitewide, not just a visual sample, since this kind of drift accumulates silently across many pages built at different times.
 - Don't write a recursive PHP tree-walker that does `foreach ($el['elements'] ?? [] as &$c)` — the `??` fallback silently breaks the reference chain, so the recursive edit reports success but never actually persists on nested (non-top-level) elements. Guard with `if (isset($el['elements']) && is_array($el['elements'])) { foreach ($el['elements'] as &$c) ... }` instead, and always re-read the saved data afterward to confirm.
 - Don't fabricate client results, testimonials, or statistics not supplied by the client.
