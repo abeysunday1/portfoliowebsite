@@ -59,6 +59,8 @@ Hero splits content left / photo right (desktop), never centered-mega-hero; stac
 
 **Dense content clustering:** any list of more than ~8 similar small items (tool logos, badges, platform names) is grouped into labeled category clusters (a small uppercase category label followed by a wrapping row of compact chips) rather than rendered as one long undifferentiated list or grid. Categories stack or sit in a responsive multi-column arrangement so the section reads as an organized system, not a spreadsheet — and so it doesn't balloon the page's scroll length with repeated full-section padding around what is really one logical block of content.
 
+**Card grids use real CSS Grid, not per-child flex width:** any row of 3+ parallel cards (services, process steps, why-work-with-me, selected work, testimonials) is laid out with an explicit `grid-Nup` utility class (`grid-3up`/`grid-4up`/`grid-5up`, etc. — `display:grid; grid-template-columns: repeat(N,1fr)`, collapsing to 2 columns at tablet/mobile) rather than relying on each card's own responsive width percentage. The per-child width control does not reliably generate any CSS in this Elementor build, so cards depending on it silently stack into one column at every breakpoint — a bug that went undetected for a long time because it doesn't show up in any content or settings check, only in an actual rendered screenshot.
+
 ## Elevation & Depth
 
 Cards sit flat at rest (hairline border only) and lift with a soft, navy-tinted shadow on hover/interaction — elevation signals interactivity, not decoration. The dark sections (Why Work With Me, footer, final CTA) use flat navy fills with a single soft teal radial glow for depth, never a hard drop shadow on a dark ground.
@@ -79,6 +81,7 @@ Buttons: pill-shaped, teal-fill primary with navy text, navy-fill secondary with
 - Do hold every section to the 64px desktop / 40px mobile rhythm unless it is the hero band or a deliberate zero-top CTA composition.
 - Do load fonts as one combined, weight-scoped Google Fonts request (only the weights actually used) rather than per-family default requests that pull the full 18-variant range.
 - Do group any dense flat list (8+ similar items) into labeled category clusters instead of one long list or grid.
+- Do lay out any 3+ card grid with a `grid-Nup` CSS Grid utility class rather than trusting each card's own responsive width setting to render correctly.
 - Do match an icon's `library` field to its actual class prefix (fas→fa-solid, fab→fa-brands, far→fa-regular) — a mismatch silently blanks the glyph with no visible error, so this needs an explicit audit pass, not just a visual skim.
 - Do use real, verified content and mark anything unverified as a placeholder rather than inventing it.
 - Do animate with transform/opacity only, and keep motion honoring prefers-reduced-motion.
@@ -91,4 +94,5 @@ Buttons: pill-shaped, teal-fill primary with navy text, navy-fill secondary with
 - Don't stack many single-category full-width sections back to back when they could be one section with internal clusters — each extra full-bleed section adds its own top/bottom padding overhead and makes the page feel longer than the content warrants.
 - Don't load a font weight the type scale doesn't actually use.
 - Don't leave a demo-template asset (logo, placeholder name, sample image) live after real content replaces it — audit for template remnants specifically, since they often don't show up in a text/content search (e.g. a name baked into an SVG logo's vector paths, or a legacy option a newer control silently defers to).
+- Don't trust a card's own width/width_tablet/width_mobile setting to produce a multi-column grid — verify with an actual rendered screenshot, not just a settings/data check, since a non-functional control here fails completely silently.
 - Don't fabricate client results, testimonials, or statistics not supplied by the client.
