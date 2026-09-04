@@ -1,14 +1,14 @@
 ---
 name: "Navy Signal"
-description: "A navy-and-teal, technology-forward system for a digital marketing, SEO, lead-generation and AI marketing professional's personal brand site."
+description: "A navy-and-electric-blue, technology-forward system for a digital marketing, SEO, lead-generation and AI marketing professional's personal brand site."
 colors:
-  bg: "#F7F9FC"
+  bg: "#F8FAFC"
   surface: "#FFFFFF"
-  ink: "#0B1220"
+  ink: "#0B1020"
   ink-muted: "#667085"
-  accent: "#00C2A8"
-  accent-dark: "#009D89"
-  accent-soft: "#E3FBF6"
+  accent: "#3B82F6"
+  accent-dark: "#2563EB"
+  accent-soft: "#EAF2FF"
   border: "#E4E7EC"
   navy-soft: "#1E2A45"
 typography:
@@ -16,7 +16,7 @@ typography:
     fontFamily: "Space Grotesk, sans-serif"
     fontWeight: "600"
   body:
-    fontFamily: "Plus Jakarta Sans, sans-serif"
+    fontFamily: "Inter, sans-serif"
     fontWeight: "400"
 spacing:
   xs: "8px"
@@ -31,7 +31,7 @@ rounded:
   md: "14px"
   lg: "20px"
 components:
-  buttons: "Pill radius. Primary: solid teal fill, navy text. Secondary: solid navy fill, white text. Outline variant on light or dark grounds. 2px lift plus soft shadow on hover."
+  buttons: "Pill radius. Primary: solid electric-blue fill, navy text. Secondary: solid navy fill, white text. Outline variant on light or dark grounds. 2px lift plus soft shadow on hover."
   cards: "20px radius, 1px hairline border, white surface, no shadow at rest, soft shadow plus 4px lift on hover. Used for genuinely grouped content, never stamped on every block."
 dials:
   variance: 0.5
@@ -41,15 +41,19 @@ dials:
 
 ## Overview
 
-Adisa Abiodun Sunday is a digital marketing specialist, SEO strategist, lead-generation specialist, content strategist, website manager and AI-powered marketing professional based in Nigeria, serving clients globally. The site's job is to convince businesses he understands strategy, SEO, lead generation, content and AI as one connected system, not a list of separate freelance tasks. The direction reads premium, technology-driven and trustworthy: a deep navy anchor, one confident teal accent, disciplined air, and real motion since the client explicitly wants a moving, not static, site — but discipline matters as much as motion: every section earns its space, nothing sits empty by accident, and dense content (tool lists, icon sets) is organized into labeled clusters rather than left as one long undifferentiated list.
+Adisa Abiodun Sunday is a digital marketing specialist, SEO strategist, lead-generation specialist, content strategist, website manager and AI-powered marketing professional based in Nigeria, serving clients globally. The site's job is to convince businesses he understands strategy, SEO, lead generation, content and AI as one connected system, not a list of separate freelance tasks. The direction reads premium, technology-driven and trustworthy: a deep navy anchor, one confident electric-blue accent, disciplined air, and real motion since the client explicitly wants a moving, not static, site — but discipline matters as much as motion: every section earns its space, nothing sits empty by accident, and dense content (tool lists, icon sets) is organized into labeled clusters rather than left as one long undifferentiated list.
 
 ## Colors
 
-Deep navy (#0B1220) is the anchor for dark sections, headings and primary buttons; off-white (#F7F9FC) and white (#FFFFFF) alternate as section grounds for rhythm. One accent only: teal (#00C2A8), used for CTAs, links, icon fills and the one active navigation state. Accent-soft (#E3FBF6) backs small tags and icon chips; ink-muted (#667085) is the only secondary text color. No purple, no gradients beyond a single soft radial glow behind the hero.
+Strictly three colors, no more: deep navy/charcoal (#0B1020) for dark sections, headings and primary buttons; off-white (#F8FAFC) and white (#FFFFFF) alternate as section grounds for rhythm; electric blue (#3B82F6) is the one accent, used for CTAs, links, icon fills, hover states, active navigation, and highlighted numbers/data. Accent-soft (#EAF2FF) backs small tags and icon chips; accent-dark (#2563EB) is for pressed/darker states of the same blue; ink-muted (#667085) is the only secondary text color. No purple, no gradients beyond a single soft radial glow behind the hero, no per-section color variation — every section uses this same three-color system, never its own palette.
 
 ## Typography
 
-Space Grotesk carries headings: geometric, confident, technology-forward, set tight (line-height ~1.15), weights 500/600/700 only — no lighter weights are ever loaded, since headings never need them. Plus Jakarta Sans carries body copy: warmer and more distinctive than the generic Inter default, while holding the same excellent legibility at small sizes this data-and-credibility-led professional-services site needs across a lot of technical copy. Weights loaded: 400 (body), 500/600 (emphasis, labels), 700 (rare, strong emphasis only) — four weights per family, not the full 18-variant range a naive Google Fonts request pulls. Running text stays near 60-70 characters wide. Both families load through one combined, weight-scoped Google Fonts request with `display=swap` and a `preconnect`, not per-family default requests.
+Space Grotesk carries headings: geometric, confident, technology-forward, set tight (line-height ~1.15), weights 500/600/700 only — no lighter weights are ever loaded, since headings never need them. Inter carries body copy: the industry-standard, highly legible UI typeface, holding up well at small sizes across a lot of technical copy (services, process, case studies). Weights loaded: 400 (body), 500/600 (emphasis, labels), 700 (rare, strong emphasis only) — four weights per family, not the full 18-variant range a naive Google Fonts request pulls. Running text stays near 60-70 characters wide. Both families load through one combined, weight-scoped Google Fonts request with `display=swap` and a `preconnect`, not per-family default requests. Only Space Grotesk + Inter are used anywhere on the site — no third typeface.
+
+## Proof / Metrics
+
+Real, verified numbers already present in the site's own content (CV, About, Experience copy) are pulled out of paragraph text and surfaced as a prominent, animated stat strip (`.site-counter`, count-up on scroll-into-view) rather than left buried in a bullet list — e.g. leads managed, social following scaled, domain-authority growth, conversion lift. Never invent a number to fill this pattern; if a metric isn't already verified somewhere in the real content, the pattern is not used for it.
 
 ## Layout
 
@@ -63,7 +67,7 @@ Hero splits content left / photo right (desktop), never centered-mega-hero; stac
 
 ## Elevation & Depth
 
-Cards sit flat at rest (hairline border only) and lift with a soft, navy-tinted shadow on hover/interaction — elevation signals interactivity, not decoration. The dark sections (Why Work With Me, footer, final CTA) use flat navy fills with a single soft teal radial glow for depth, never a hard drop shadow on a dark ground.
+Cards sit flat at rest (hairline border only) and lift with a soft, navy-tinted shadow on hover/interaction — elevation signals interactivity, not decoration. The dark sections (Why Work With Me, footer, final CTA) use flat navy fills with a single soft electric-blue radial glow for depth, never a hard drop shadow on a dark ground.
 
 ## Shapes
 
@@ -71,12 +75,13 @@ One radius scale, held everywhere: buttons are full pill, cards and panels use 2
 
 ## Components
 
-Buttons: pill-shaped, teal-fill primary with navy text, navy-fill secondary with white text, outline variant for tertiary actions on either light or dark grounds; every button lifts 2px with a soft shadow on hover. Cards: 20px radius, hairline border, white surface, flat at rest, lift plus shadow on hover; used for services, process steps, portfolio items and testimonials — not for every content block. Icon chips: small rounded-square teal-tinted fills behind line icons, consistent across trust, services and why-work-with-me sections. Tool/category chips: compact (~150px) rounded cards, grouped under a small uppercase category label rather than left loose in one undifferentiated grid.
+Buttons: pill-shaped, electric-blue-fill primary with navy/white text (whichever contrasts), navy-fill secondary with white text, outline variant for tertiary actions on either light or dark grounds; every button lifts 2px with a soft shadow on hover. Cards: 20px radius, hairline border, white surface, flat at rest, lift plus shadow on hover; used for services, process steps, portfolio items, testimonials and stat metrics — not for every content block. Icon chips: small rounded-square electric-blue-tinted fills behind line icons, consistent across trust, services and why-work-with-me sections. Tool/category chips: compact (~150px) rounded cards, grouped under a small uppercase category label rather than left loose in one undifferentiated grid.
 
 ## Do's and Don'ts
 
 ### Do's
-- Do use the teal accent for exactly one action per view (primary CTA, active nav link, or a single highlighted stat).
+- Do use the electric-blue accent for exactly one action per view (primary CTA, active nav link, or a single highlighted stat).
+- Do surface real, already-verified numbers from existing copy as a prominent animated stat strip rather than leaving them buried in body text — never invent one to fill a gap.
 - Do keep sections alternating white/off-white grounds for rhythm.
 - Do hold every section to the 64px desktop / 40px mobile rhythm unless it is the hero band or a deliberate zero-top CTA composition.
 - Do load fonts as one combined, weight-scoped Google Fonts request (only the weights actually used) rather than per-family default requests that pull the full 18-variant range.
