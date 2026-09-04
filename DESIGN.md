@@ -85,6 +85,7 @@ Buttons: pill-shaped, teal-fill primary with navy text, navy-fill secondary with
 - Do match an icon's `library` field to its actual class prefix (fas→fa-solid, fab→fa-brands, far→fa-regular) — a mismatch silently blanks the glyph with no visible error, so this needs an explicit audit pass, not just a visual skim.
 - Do use real, verified content and mark anything unverified as a placeholder rather than inventing it.
 - Do animate with transform/opacity only, and keep motion honoring prefers-reduced-motion.
+- Do treat a "the data is right but the live page still shows the old version" report as an Elementor whole-page element cache issue first (site setting: Elementor > Settings > Performance > Element Cache, and the `_elementor_element_cache` post meta it writes) — it caches full rendered page HTML for up to 24h by default and is not cleared by a normal CSS-cache purge. This site now keeps it disabled.
 
 ### Don'ts
 - Don't introduce a second accent color anywhere on the site.
@@ -95,4 +96,5 @@ Buttons: pill-shaped, teal-fill primary with navy text, navy-fill secondary with
 - Don't load a font weight the type scale doesn't actually use.
 - Don't leave a demo-template asset (logo, placeholder name, sample image) live after real content replaces it — audit for template remnants specifically, since they often don't show up in a text/content search (e.g. a name baked into an SVG logo's vector paths, or a legacy option a newer control silently defers to).
 - Don't trust a card's own width/width_tablet/width_mobile setting to produce a multi-column grid — verify with an actual rendered screenshot, not just a settings/data check, since a non-functional control here fails completely silently.
+- Don't write a recursive PHP tree-walker that does `foreach ($el['elements'] ?? [] as &$c)` — the `??` fallback silently breaks the reference chain, so the recursive edit reports success but never actually persists on nested (non-top-level) elements. Guard with `if (isset($el['elements']) && is_array($el['elements'])) { foreach ($el['elements'] as &$c) ... }` instead, and always re-read the saved data afterward to confirm.
 - Don't fabricate client results, testimonials, or statistics not supplied by the client.
