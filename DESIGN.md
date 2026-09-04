@@ -1,254 +1,94 @@
-# Adisa Abiodun Sunday — Digital Marketing Portfolio
-### Design System & WordPress/Elementor Build Guide
-
-This document accompanies the coded prototype in this repository (`index.html`, `about.html`, `services.html`, `portfolio.html`, `experience.html`, `contact.html`, `cv.html`, `privacy.html`, `assets/`). The prototype is a fully responsive, static HTML/CSS/JS build of the site — use it as the visual and structural reference when rebuilding the same design in WordPress + Elementor.
-
-**Important:** No client names, revenue figures, traffic numbers, conversion rates, testimonials, certifications, awards, or employment history have been invented anywhere in this build. Every such field is a clearly marked placeholder (`[Add ...]`, "Client testimonial will be added here," "Project details will be added here once published," etc.). Replace placeholders only with verified information before publishing.
-
+---
+name: "Navy Signal"
+description: "A navy-and-teal, technology-forward system for a digital marketing, SEO, lead-generation and AI marketing professional's personal brand site."
+colors:
+  bg: "#F7F9FC"
+  surface: "#FFFFFF"
+  ink: "#0B1220"
+  ink-muted: "#667085"
+  accent: "#00C2A8"
+  accent-dark: "#009D89"
+  accent-soft: "#E3FBF6"
+  border: "#E4E7EC"
+  navy-soft: "#1E2A45"
+typography:
+  heading:
+    fontFamily: "Space Grotesk, sans-serif"
+    fontWeight: "600"
+  body:
+    fontFamily: "Plus Jakarta Sans, sans-serif"
+    fontWeight: "400"
+spacing:
+  xs: "8px"
+  sm: "16px"
+  md: "28px"
+  lg: "48px"
+  xl: "72px"
+  section-desktop: "64px"
+  section-mobile: "40px"
+rounded:
+  sm: "10px"
+  md: "14px"
+  lg: "20px"
+components:
+  buttons: "Pill radius. Primary: solid teal fill, navy text. Secondary: solid navy fill, white text. Outline variant on light or dark grounds. 2px lift plus soft shadow on hover."
+  cards: "20px radius, 1px hairline border, white surface, no shadow at rest, soft shadow plus 4px lift on hover. Used for genuinely grouped content, never stamped on every block."
+dials:
+  variance: 0.5
+  density: 0.3
+  motion: 0.65
 ---
 
-## 1. Complete Sitemap
+## Overview
 
-```
-Home (/)
-├── About (/about.html)
-├── Services (/services.html)
-│    ├── Digital Marketing Strategy
-│    ├── SEO
-│    ├── Lead Generation
-│    ├── Social Media Marketing
-│    ├── Content Marketing
-│    ├── AI-Powered Marketing
-│    ├── WordPress & Website Management
-│    └── Email Marketing & Automation
-├── Portfolio / Case Studies (/portfolio.html)
-│    └── Individual case study detail pages (one per project, same template)
-├── Experience (/experience.html)
-├── Contact (/contact.html)
-├── CV / Resume (/cv.html)
-└── Privacy Policy (/privacy.html) — footer utility page, not in main nav
-```
+Adisa Abiodun Sunday is a digital marketing specialist, SEO strategist, lead-generation specialist, content strategist, website manager and AI-powered marketing professional based in Nigeria, serving clients globally. The site's job is to convince businesses he understands strategy, SEO, lead generation, content and AI as one connected system, not a list of separate freelance tasks. The direction reads premium, technology-driven and trustworthy: a deep navy anchor, one confident teal accent, disciplined air, and real motion since the client explicitly wants a moving, not static, site — but discipline matters as much as motion: every section earns its space, nothing sits empty by accident, and dense content (tool lists, icon sets) is organized into labeled clusters rather than left as one long undifferentiated list.
 
-Primary navigation stays to six items (Home, About, Services, Portfolio, Experience, Contact) plus a standout "CV / Resume" and "Let's Talk" action — matching the brief's requirement to keep navigation simple.
+## Colors
 
----
+Deep navy (#0B1220) is the anchor for dark sections, headings and primary buttons; off-white (#F7F9FC) and white (#FFFFFF) alternate as section grounds for rhythm. One accent only: teal (#00C2A8), used for CTAs, links, icon fills and the one active navigation state. Accent-soft (#E3FBF6) backs small tags and icon chips; ink-muted (#667085) is the only secondary text color. No purple, no gradients beyond a single soft radial glow behind the hero.
 
-## 2. Homepage Wireframe (section stack)
+## Typography
 
-1. Sticky header / nav
-2. Hero — headline, subtext, 2 CTAs, expertise strip, photo panel
-3. Trust & Expertise — 4 cards (Digital Marketing, SEO & SEM, Lead Generation, AI & Automation)
-4. About teaser — photo + intro copy + skill checklist + "More About Me"
-5. Services — 8-card grid + link to full Services page
-6. My Process — 5-step numbered/connected track
-7. Selected Work — 3 featured case-study cards + "View All Work"
-8. Tools & Technologies — badge grid
-9. Why Work With Me — 6-item grid on dark navy background
-10. Testimonials — 3 placeholder cards
-11. Final CTA — full-width dark banner, 2 buttons
-12. Footer — brand, nav, contact, social, legal
+Space Grotesk carries headings: geometric, confident, technology-forward, set tight (line-height ~1.15), weights 500/600/700 only — no lighter weights are ever loaded, since headings never need them. Plus Jakarta Sans carries body copy: warmer and more distinctive than the generic Inter default, while holding the same excellent legibility at small sizes this data-and-credibility-led professional-services site needs across a lot of technical copy. Weights loaded: 400 (body), 500/600 (emphasis, labels), 700 (rare, strong emphasis only) — four weights per family, not the full 18-variant range a naive Google Fonts request pulls. Running text stays near 60-70 characters wide. Both families load through one combined, weight-scoped Google Fonts request with `display=swap` and a `preconnect`, not per-family default requests.
 
-Interior pages (About, Services, Portfolio, Experience, Contact, CV) reuse the same header/footer and a consistent `.page-hero` band, so the system feels like one site rather than disconnected templates.
+## Layout
 
----
+Hero splits content left / photo right (desktop), never centered-mega-hero; stacks with photo above copy on mobile. Sections alternate white and off-white grounds for rhythm without borders. Content sections use asymmetric or split layouts where the content allows (About, case studies); grids of cards are reserved for genuinely parallel items (services, process, tools) and never repeat more than twice in a row without a different layout family between them.
 
-## 3. Color Palette (HEX)
+**Section rhythm (the vertical spacing system):** every top-level section on a page — except the hero/page-hero band and any section deliberately butted against zero top padding to compose a tight CTA-under-content moment — uses exactly `64px` top/bottom padding on desktop and `40px` on mobile, with `40px`/`24px` left/right. This is enforced site-wide, not per-page-improvised: a page that improvises its own one-off section gap (56px here, 96px there) reads as unfinished, even if each individual value looks reasonable in isolation. The hero/page-hero band itself uses `64px` top / `72px` bottom desktop, `40px`/`48px` mobile — slightly asymmetric since it sits right under the header and should lead into the next section without a dead gap. The site header itself holds a single fixed row height (108px) rather than an oversized custom value — a tall header stacked on top of a full hero padding is exactly the kind of compounding gap that reads as "unnecessarily spaced out," so header height and hero padding are tuned together, not independently. A section that intentionally has zero top padding (a final-CTA panel floating up against the section above it) is a deliberate exception, not a missed normalization pass.
 
-| Token | Hex | Use |
-|---|---|---|
-| Navy (primary dark) | `#0B1220` | Headings, dark sections, footer, buttons |
-| Navy 2 | `#131B2E` | Gradient partner for navy, dark surfaces |
-| Navy Soft | `#1E2A45` | Gradient highlight, hover states |
-| White | `#FFFFFF` | Base background |
-| Off-White | `#F7F9FC` | Section alternation background |
-| Surface | `#F1F4F9` | Subtle fills |
-| Gray 900 | `#101828` | Body text on light backgrounds (dark) |
-| Gray 700 | `#344054` | Default body text |
-| Gray 500 | `#667085` | Secondary / supporting text |
-| Gray 300 | `#D0D5DD` | Borders |
-| Gray 200 | `#E4E7EC` | Card borders, dividers |
-| Gray 100 | `#F0F2F6` | Light fills, dashed placeholder boxes |
-| **Accent (tech teal)** | `#00C2A8` | Buttons, links, icons, highlights |
-| Accent Dark | `#009D89` | Hover states, eyebrow text |
-| Accent Soft | `#E3FBF6` | Icon backgrounds, tag chips |
-| Accent Ink | `#05473F` | Text on accent-soft backgrounds |
+**Dense content clustering:** any list of more than ~8 similar small items (tool logos, badges, platform names) is grouped into labeled category clusters (a small uppercase category label followed by a wrapping row of compact chips) rather than rendered as one long undifferentiated list or grid. Categories stack or sit in a responsive multi-column arrangement so the section reads as an organized system, not a spreadsheet — and so it doesn't balloon the page's scroll length with repeated full-section padding around what is really one logical block of content.
 
-Rationale: navy communicates trust and technology; the single teal accent reads as modern/AI-adjacent without becoming a "gradient-heavy startup" cliché. Gray scale (Untitled-UI-style ramp) keeps text hierarchy clean and accessible (all body text passes WCAG AA against white/off-white).
+## Elevation & Depth
 
----
+Cards sit flat at rest (hairline border only) and lift with a soft, navy-tinted shadow on hover/interaction — elevation signals interactivity, not decoration. The dark sections (Why Work With Me, footer, final CTA) use flat navy fills with a single soft teal radial glow for depth, never a hard drop shadow on a dark ground.
 
-## 4. Typography
+## Shapes
 
-- **Headings:** Space Grotesk (500/600/700) — geometric, confident, technology-forward.
-- **Body:** Inter (400/500/600/700) — highly legible at small sizes, excellent multilingual/number support for stats and data.
-- **Loaded via Google Fonts** in `<head>` of every page (`fonts.googleapis.com`).
+One radius scale, held everywhere: buttons are full pill, cards and panels use 20px (14px for compact cards like process steps and tool badges), small chips/tags use a full pill at small scale. No mixing of sharp and soft corners within the same component family.
 
-Scale (fluid via `clamp()`):
-- H1: `clamp(2.4rem, 5vw, 3.6rem)` / 700
-- H2: `clamp(1.9rem, 3.4vw, 2.6rem)` / 600
-- H3: `1.3rem` / 600
-- Body: `1rem`, line-height `1.6`
-- Eyebrow labels: `0.78rem`, uppercase, letter-spacing `0.14em`, 700 weight
+## Components
 
-Only one H1 per page (page title / hero headline); services, case studies and timeline entries use H3 within H2-headed sections — satisfying the SEO heading-hierarchy requirement.
+Buttons: pill-shaped, teal-fill primary with navy text, navy-fill secondary with white text, outline variant for tertiary actions on either light or dark grounds; every button lifts 2px with a soft shadow on hover. Cards: 20px radius, hairline border, white surface, flat at rest, lift plus shadow on hover; used for services, process steps, portfolio items and testimonials — not for every content block. Icon chips: small rounded-square teal-tinted fills behind line icons, consistent across trust, services and why-work-with-me sections. Tool/category chips: compact (~150px) rounded cards, grouped under a small uppercase category label rather than left loose in one undifferentiated grid.
 
----
+## Do's and Don'ts
 
-## 5. Section-by-Section Layout Notes
+### Do's
+- Do use the teal accent for exactly one action per view (primary CTA, active nav link, or a single highlighted stat).
+- Do keep sections alternating white/off-white grounds for rhythm.
+- Do hold every section to the 64px desktop / 40px mobile rhythm unless it is the hero band or a deliberate zero-top CTA composition.
+- Do load fonts as one combined, weight-scoped Google Fonts request (only the weights actually used) rather than per-family default requests that pull the full 18-variant range.
+- Do group any dense flat list (8+ similar items) into labeled category clusters instead of one long list or grid.
+- Do match an icon's `library` field to its actual class prefix (fas→fa-solid, fab→fa-brands, far→fa-regular) — a mismatch silently blanks the glyph with no visible error, so this needs an explicit audit pass, not just a visual skim.
+- Do use real, verified content and mark anything unverified as a placeholder rather than inventing it.
+- Do animate with transform/opacity only, and keep motion honoring prefers-reduced-motion.
 
-| Section | Layout | Elementor widget mapping |
-|---|---|---|
-| Header/Nav | Sticky flex row, logo left, links center, CTAs+hamburger right | Elementor **Nav Menu** widget in a sticky **Container** (Motion Effects → Sticky) |
-| Hero | 2-column container (55/45), text left / photo right, stacks on mobile | **Container** (flex, 2 columns) with **Heading**, **Text Editor**, **Button** ×2, **Image** |
-| Trust/Expertise | 4-col grid | **Container** grid (4 cols → 2 → 1) of repeated **Icon Box** widgets |
-| About | 2-col container, photo + copy | **Container** + **Image** + **Icon List** (skills) + **Button** |
-| Services | 4×2 grid of cards | **Container** grid of **Icon Box** widgets (or **Loop Grid** bound to a "Services" CPT) |
-| Process | 5-col connected track | **Container** (flex) of 5 **Icon Box**/**Number Counter**-style boxes; use a thin **Divider** as the connector line |
-| Portfolio | Filterable 3-col grid | **Loop Grid** widget bound to a "Case Studies" CPT, with Elementor's built-in **Taxonomy Filter** for category buttons |
-| Tools | 6-col badge grid | **Container** grid of simple **Text** or **Icon Box** widgets (no external logo assets needed) |
-| Why Work With Me | Dark-background 3-col grid | **Container** (background: navy) of **Icon Box** widgets, text color overridden to white |
-| Testimonials | 3-col cards | **Container** grid of **Testimonial** widget (Elementor Pro) or custom **Icon Box** cards |
-| Final CTA | Full-width dark banner, centered | **Container** with background gradient, **Heading**, **Text**, 2 **Buttons** |
-| Contact | 2-col: form + info card | **Form** widget (Elementor Pro) left, **Container** info card right |
-| Footer | 3-col + bottom bar | Elementor **Theme Builder → Footer** template, **Container** grid + **Nav Menu** + **Social Icons** |
-
----
-
-## 6. Recommended Images & Icons
-
-- **Hero/About photo:** Replace the monogram placeholder (`AAS` on navy gradient) with a real, professionally shot or well-lit portrait — vertical orientation, simple background, natural expression, business-casual attire. Export at minimum 1200px on the long edge, WebP format.
-- **Case study thumbnails:** Use real screenshots (dashboards, published content, website screens) once each case study is documented — never stock photography standing in for real work.
-- **Icons:** The prototype uses inline, hand-drawn SVG line icons (24×24, 1.8px stroke, no external icon font) to avoid license/version bloat. In Elementor, replace with **Font Awesome 6 Free** (already bundled) or **IcoFont**, matched to the same line-icon style (avoid mixing filled and outline icon sets).
-- **Tool badges:** Text-based cards are used by default (safe, license-free). If official partner/press permission exists, swap in real SVG logos at consistent height (~28px) on a neutral card background.
-
----
-
-## 7. Complete Homepage Copy
-
-**Eyebrow:** Digital Marketing · SEO · Lead Generation · AI
-
-**H1:** I Help Businesses Turn Digital Marketing Into Growth.
-
-**Subtext:** Digital marketing, SEO, lead generation and AI-powered strategies designed to attract the right audience, generate opportunities and build stronger digital systems.
-
-**Buttons:** View My Work · Let's Work Together
-
-**Expertise strip:** Digital Marketing • SEO • Lead Generation • AI Marketing • Content Strategy • WordPress
-
-**Trust section eyebrow/H2:** How I Work / A connected approach to digital growth
-*(full card copy for all 8 services, 5 process steps, why-work-with-me items, and CTA copy is implemented verbatim in `index.html` — this file is the single source of truth for that copy.)*
-
-**Final CTA:** Ready to Grow Your Digital Presence? / Let's discuss your goals and build a digital marketing strategy designed around your business. — Start a Project · Contact Me
-
----
-
-## 8. Mobile Layout Recommendations
-
-- Header collapses to logo + hamburger at ≤860px; nav links and secondary CTA move into a slide-in drawer (`.nav-drawer`) — already implemented and functional in the prototype (`assets/js/main.js`).
-- Hero stacks to a single column with the photo panel **above** the copy (`.hero-visual{order:-1}`) so the personal photo still lands first on mobile.
-- All 4/3-column grids collapse: 4→2→1 and 3→2→1 at 1024px/640px breakpoints.
-- Buttons expand to comfortable 48px+ tap targets; forms stack to one column at ≤640px.
-- Process track and tools grid drop their side connectors/columns and stack vertically for readability.
-- Type scale shrinks fluidly via `clamp()` rather than a hard mobile breakpoint jump, avoiding awkward reflow.
-- Test at 375px (small phone), 768px (tablet) and 1024px (small laptop) minimum.
-
----
-
-## 9. Elementor Implementation Instructions
-
-1. **Global Settings** (Elementor → Site Settings):
-   - **Colors:** add the palette in Section 3 as Global Colors (Primary = Accent `#00C2A8`, Secondary = Navy `#0B1220`, Text = Gray 700 `#344054`, Accent = Accent Dark `#009D89`).
-   - **Typography:** add Space Grotesk (headings) and Inter (body) as Global Fonts; set default H1–H4 and body styles to match Section 4.
-   - **Buttons:** create a Global Button style (pill radius `999px`, 15px/28px padding, hover lift + shadow) matching `.btn-primary`/`.btn-dark`/`.btn-outline`.
-   - **Layout:** set container width to 1200px, default section padding to the fluid values in Section 4.
-2. Build each page as an Elementor **Container** (not the legacy Section/Column), nesting inner containers for grids — this maps directly to the flex/grid CSS already used in the prototype.
-3. Save repeating elements (service card, process step, testimonial card, footer, header) as **Elementor Global Widgets/Templates** so edits propagate site-wide.
-4. Use the **Theme Builder** for Header and Footer templates applied site-wide, rather than rebuilding them per page.
-5. For Portfolio, create a **Case Study** Custom Post Type (via a plugin such as JetEngine, Pods, or ACF + CPT UI) with fields for Challenge / Strategy / Execution / Tools / Results, then render the archive with a **Loop Grid** and single template with a **Loop Item**.
-6. Recreate the mobile drawer nav using Elementor's native **Nav Menu** widget mobile "Dropdown" behavior, or a lightweight menu plugin — no custom JS required in Elementor unless replicating the exact slide-in drawer look, in which case use Elementor's Custom CSS/JS panel (Pro) with the logic in `assets/js/main.js` as reference.
-7. Compress and serve images as WebP (Elementor's built-in Image Optimizer or a plugin like ShortPixel).
-
----
-
-## 10. SEO Recommendations
-
-- One H1 per page (already enforced across all templates).
-- Logical H2 → H3 hierarchy within every section (no skipped levels).
-- Unique, descriptive `<title>` and meta description per page (already written into every HTML file — replace `example.com` canonical URLs with the live domain).
-- SEO-friendly URLs: keep the flat structure (`/about`, `/services`, `/portfolio`, `/experience`, `/contact`) once migrated into WordPress permalinks.
-- Add descriptive `alt` text to every real image once photos/screenshots are added (currently no `<img>` raster assets exist — only inline SVG/CSS placeholders).
-- Internal linking: every section already cross-links to Services, Portfolio, Contact and CV — preserve this in the WP build.
-- Install **Rank Math** or **Yoast SEO** for meta control, XML sitemap generation, and schema.
-- Add `Person` and `ProfessionalService`/`Organization` structured data (a starter `Person` JSON-LD block is already included in `index.html`'s `<head>` — expand it with real sameAs social profile URLs).
-- Connect **Google Search Console** and **Google Analytics 4** post-launch; submit the XML sitemap.
-- Optimize Core Web Vitals: lazy-load below-the-fold images, use a caching plugin (WP Rocket / LiteSpeed Cache), and a lightweight Elementor-compatible theme (Hello Elementor or Astra).
-- Mobile-first indexing is already covered by the fully responsive layout.
-
----
-
-## 11. Recommended Animations
-
-Updated per client request for a "motion" site rather than a static one. Motion is still purposeful and premium — nothing bounces, spins, or loops attention-grabbingly — but the site now actively moves. Implemented in `assets/css/style.css` + `assets/js/main.js`, all gated behind `prefers-reduced-motion`:
-
-- **Hero entrance:** headline, subtext, buttons and the photo panel fade/slide in on load, staggered ~120ms apart (`hero-in` keyframes) — in Elementor, use **Motion Effects → Entrance Animation** per widget with staggered delays, or Elementor Pro's animation delay field.
-- **Animated hero background:** two soft blurred gradient orbs drift slowly behind the hero content on an infinite loop (`orbit-a`/`orbit-b` keyframes, 22–26s cycles) — in Elementor, approximate with two absolutely-positioned shape divs and CSS animation via the Custom CSS panel, or a subtle Lottie loop (Elementor Pro **Lottie** widget) if a designer produces one.
-- **Scroll-reveal:** cards, section headers, timeline entries and CTAs fade/slide up into place as they enter the viewport, staggered by sibling order (`IntersectionObserver` in `main.js`) — in Elementor, use **Motion Effects → Entrance Animation: Fade In Up** per widget/container, staggered manually via each widget's animation delay.
-- **Process connector fill:** the line joining the 5 process steps draws in (scaleX 0→1) once the section scrolls into view, rather than appearing static — recreate in Elementor with a thin Divider widget plus a Motion Effects entrance animation set to "Grow".
-- **Sticky header shrink:** the header gains a shadow/border and tightens its padding after ~8px of scroll (plain scroll-listener class toggle) — in Elementor, Motion Effects → Sticky, with a secondary "shrink on scroll" effect if the theme/builder supports it (or a small custom-CSS snippet keyed to a scroll class).
-- **Tools ticker:** the Tools & Technologies badges auto-scroll in an infinite horizontal loop, pausing on hover, with a soft edge fade mask — in Elementor, use a **Marquee/Logo Carousel** widget (native in newer Elementor Pro versions) or a lightweight marquee plugin; keep speed slow (~30s per loop) so logos stay readable.
-- **Native page transitions:** `@view-transition { navigation: auto; }` is set in the site CSS, which triggers the browser-native cross-document View Transitions API in supporting browsers (Chrome/Edge 126+) for a soft cross-fade between pages — no build required; it's simply ignored (no error, no fallback needed) in browsers that don't yet support it. WordPress can carry this the same way via a small snippet in the theme's global CSS.
-- **Hover interactions (unchanged):** card lift + shadow, button color shift + 2px lift.
-- **Still avoided:** auto-playing content carousels, parallax scrubbing on text-heavy sections, spinning/bouncing effects, and anything that delays reading the hero headline on first paint (all animated elements are visible at rest before/without JS — motion is additive, never load-bearing for content visibility).
-
----
-
-## 12. Recommended Plugins
-
-- **Elementor Pro** — Theme Builder, Forms, Loop Grid, Popups (used sparingly, if at all)
-- **Rank Math SEO** (or Yoast SEO) — meta, sitemap, schema
-- **WP Rocket** or **LiteSpeed Cache** — performance/caching
-- **ShortPixel** or **Imagify** — image compression/WebP conversion
-- **JetEngine / Pods / ACF + Custom Post Type UI** — Case Study custom post type for Portfolio
-- **WPForms** or Elementor Pro Forms + **WP Mail SMTP** — reliable contact form delivery
-- **UpdraftPlus** — backups
-- **Wordfence** or **Sucuri** — security
-- **Site Kit by Google** — Analytics + Search Console integration in one dashboard
-
----
-
-## 13. Suggested Portfolio / Case-Study Structure
-
-Each case study (Loop Item template) should include:
-
-1. Title + category tag(s) (SEO & Content, Lead Generation, Social Media, Website Management, Real Estate, Technology, Email Marketing, AI Marketing)
-2. Featured image/screenshot
-3. **Challenge** — the business problem or goal
-4. **Strategy** — the approach taken
-5. **Execution** — what was actually built/published/launched
-6. **Tools** — platforms and tools used
-7. **Results** — reported only when verifiable; otherwise a plain description of work completed, per the brief's explicit instruction never to invent metrics
-8. Optional real client quote (only if supplied and approved by the client)
-
-The prototype's `portfolio.html` implements this exact structure with eight placeholder category slots and a working client-side filter — populate each with real project data as it becomes available.
-
----
-
-## 14. Suggested Navigation Structure
-
-**Primary nav:** Home · About · Services · Portfolio · Experience · Contact
-**Secondary/utility:** CV / Resume (outline button) · Let's Talk (filled accent button) — both in header and mobile drawer
-**Footer nav:** mirrors primary nav + Privacy Policy + social icons (LinkedIn, Email, WhatsApp) + copyright
-
----
-
-## Outstanding items before launch
-
-- [ ] Replace all `[bracketed]` placeholders in `experience.html` (roles, companies, dates, certifications) with verified data.
-- [ ] Replace testimonial placeholders in `index.html` with real, approved client quotes, or remove the section until available.
-- [ ] Replace portfolio placeholder notes with real Challenge/Strategy/Execution/Tools/Results content per project.
-- [ ] Add a real professional photo (hero + about sections) in place of the monogram placeholder.
-- [ ] Replace `hello@example.com`, WhatsApp number, and LinkedIn URL with real contact details in every page footer + `contact.html`.
-- [ ] Add the real CV PDF at `assets/docs/Adisa-Abiodun-Sunday-CV.pdf`.
-- [ ] Wire `contact.html`'s form to a real email/CRM endpoint (currently a front-end-only placeholder — see `assets/js/main.js`).
-- [ ] Replace `https://www.example.com/` canonical URLs with the live domain once deployed.
-- [ ] Write a real, jurisdiction-appropriate privacy policy to replace the placeholder in `privacy.html`.
+### Don'ts
+- Don't introduce a second accent color anywhere on the site.
+- Don't use a centered mega-hero; keep the hero split or asymmetric.
+- Don't stack more than two card-grid sections in a row without a different layout family between them.
+- Don't improvise a one-off section padding value; use the 64px/40px rhythm.
+- Don't stack many single-category full-width sections back to back when they could be one section with internal clusters — each extra full-bleed section adds its own top/bottom padding overhead and makes the page feel longer than the content warrants.
+- Don't load a font weight the type scale doesn't actually use.
+- Don't leave a demo-template asset (logo, placeholder name, sample image) live after real content replaces it — audit for template remnants specifically, since they often don't show up in a text/content search (e.g. a name baked into an SVG logo's vector paths, or a legacy option a newer control silently defers to).
+- Don't fabricate client results, testimonials, or statistics not supplied by the client.
