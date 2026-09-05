@@ -73,6 +73,10 @@ Cards sit flat at rest (hairline border only) and lift with a soft, navy-tinted 
 
 One radius scale, held everywhere: buttons are full pill, cards and panels use 20px (14px for compact cards like process steps and tool badges), small chips/tags use a full pill at small scale. No mixing of sharp and soft corners within the same component family.
 
+## Motion accents
+
+A single-row desktop process grid (`.cine-process-flow`, paired with `grid-Nup`) carries a subtle electric-blue arrow between step cards to read as a left-to-right sequence rather than a card wall. Desktop-only: once the grid wraps to 2 columns at tablet/mobile, adjacent cards are no longer a left-to-right sequence, so the connector hides rather than misleading.
+
 ## Components
 
 Buttons: pill-shaped, electric-blue fill (#3B82F6) with off-white text (#F8FAFC) is the one and only solid-fill button style on the site — every primary CTA everywhere uses exactly this, never a navy or any other solid fill. Secondary/tertiary actions use the outline variant only (transparent fill, border + text in navy or white depending on the ground) — there is no second solid color tier. Every button lifts 2px with a soft shadow on hover. Cards: 20px radius, hairline border, white surface, flat at rest, lift plus shadow on hover; used for services, process steps, portfolio items, testimonials and stat metrics — not for every content block. Icon chips: small rounded-square electric-blue-tinted fills behind line icons, consistent across trust, services and why-work-with-me sections. Tool/category chips: compact (~150px) rounded cards, grouped under a small uppercase category label rather than left loose in one undifferentiated grid.
