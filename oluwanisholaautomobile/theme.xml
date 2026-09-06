@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=5' name='viewport'/>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+<title><data:blog.pageTitle/></title>
+<b:if cond='data:blog.metaDescription'>
+  <meta expr:content='data:blog.metaDescription' name='description'/>
+<b:elseif cond='data:view.isHomepage'/>
+  <meta content='Trusted auto repair and mobile mechanic services in Mushin, Matori, Lagos. Over 10 years of experience on all makes and models. Contact Oluwanisholaautomobile for a price.' name='description'/>
+</b:if>
+<link expr:href='data:blog.canonicalUrl' rel='canonical'/>
+<b:if cond='data:blog.pageType == &quot;index&quot;'>
+  <meta content='Mushin, Matori, mechanic, Lagos, auto repair, car servicing' name='keywords'/>
+</b:if>
+<link href='https://fonts.googleapis.com' rel='preconnect'/>
+<link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>
+<link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap' rel='stylesheet'/>
+<b:if cond='data:view.isHomepage'>
+<script type='application/ld+json'>
+{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;AutoRepair&quot;,
+  &quot;name&quot;: &quot;Oluwanisholaautomobile&quot;,
+  &quot;image&quot;: &quot;https://blogger.googleusercontent.com/img/a/placeholder-logo.jpg&quot;,
+  &quot;telephone&quot;: &quot;+2347037520976&quot;,
+  &quot;email&quot;: &quot;info@oluwanishola.com&quot;,
+  &quot;priceRange&quot;: &quot;Contact for price&quot;,
+  &quot;address&quot;: {
+    &quot;@type&quot;: &quot;PostalAddress&quot;,
+    &quot;streetAddress&quot;: &quot;43 Ojekunle, Papa Ajao, Mushin Way, Matori&quot;,
+    &quot;addressLocality&quot;: &quot;Lagos&quot;,
+    &quot;addressCountry&quot;: &quot;NG&quot;
+  },
+  &quot;openingHoursSpecification&quot;: [{
+    &quot;@type&quot;: &quot;OpeningHoursSpecification&quot;,
+    &quot;dayOfWeek&quot;: [&quot;Monday&quot;,&quot;Tuesday&quot;,&quot;Wednesday&quot;,&quot;Thursday&quot;,&quot;Friday&quot;,&quot;Saturday&quot;],
+    &quot;opens&quot;: &quot;08:00&quot;,
+    &quot;closes&quot;: &quot;18:00&quot;
+  }],
+  &quot;areaServed&quot;: &quot;Lagos&quot;,
+  &quot;hasOfferCatalog&quot;: {
+    &quot;@type&quot;: &quot;OfferCatalog&quot;,
+    &quot;name&quot;: &quot;Auto Repair Services&quot;,
+    &quot;itemListElement&quot;: [
+      {&quot;@type&quot;: &quot;Offer&quot;, &quot;itemOffered&quot;: {&quot;@type&quot;: &quot;Service&quot;, &quot;name&quot;: &quot;Car Diagnostics &amp; Computer Scanning&quot;}},
+      {&quot;@type&quot;: &quot;Offer&quot;, &quot;itemOffered&quot;: {&quot;@type&quot;: &quot;Service&quot;, &quot;name&quot;: &quot;Engine Repair &amp; Maintenance&quot;}},
+      {&quot;@type&quot;: &quot;Offer&quot;, &quot;itemOffered&quot;: {&quot;@type&quot;: &quot;Service&quot;, &quot;name&quot;: &quot;Transmission &amp; Gearbox Repair&quot;}},
+      {&quot;@type&quot;: &quot;Offer&quot;, &quot;itemOffered&quot;: {&quot;@type&quot;: &quot;Service&quot;, &quot;name&quot;: &quot;Brake &amp; Suspension Services&quot;}},
+      {&quot;@type&quot;: &quot;Offer&quot;, &quot;itemOffered&quot;: {&quot;@type&quot;: &quot;Service&quot;, &quot;name&quot;: &quot;Steering &amp; Wheel Services&quot;}},
+      {&quot;@type&quot;: &quot;Offer&quot;, &quot;itemOffered&quot;: {&quot;@type&quot;: &quot;Service&quot;, &quot;name&quot;: &quot;Auto Electrical Services&quot;}},
+      {&quot;@type&quot;: &quot;Offer&quot;, &quot;itemOffered&quot;: {&quot;@type&quot;: &quot;Service&quot;, &quot;name&quot;: &quot;Car Air Conditioning (A/C)&quot;}},
+      {&quot;@type&quot;: &quot;Offer&quot;, &quot;itemOffered&quot;: {&quot;@type&quot;: &quot;Service&quot;, &quot;name&quot;: &quot;Panel Beating &amp; Body Repairs&quot;}},
+      {&quot;@type&quot;: &quot;Offer&quot;, &quot;itemOffered&quot;: {&quot;@type&quot;: &quot;Service&quot;, &quot;name&quot;: &quot;Car Painting &amp; Body Refinishing&quot;}},
+      {&quot;@type&quot;: &quot;Offer&quot;, &quot;itemOffered&quot;: {&quot;@type&quot;: &quot;Service&quot;, &quot;name&quot;: &quot;Car Upholstery &amp; Interior Customization&quot;}},
+      {&quot;@type&quot;: &quot;Offer&quot;, &quot;itemOffered&quot;: {&quot;@type&quot;: &quot;Service&quot;, &quot;name&quot;: &quot;Vehicle Inspection &amp; Pre-Purchase Checks&quot;}},
+      {&quot;@type&quot;: &quot;Offer&quot;, &quot;itemOffered&quot;: {&quot;@type&quot;: &quot;Service&quot;, &quot;name&quot;: &quot;Mobile/Home Mechanic &amp; Emergency Auto Services&quot;}}
+    ]
+  }
+}
+</script>
+</b:if>
+<b:skin><![CDATA[
+:root{
+  --navy:#0B2D5C;
+  --navy-light:#123a73;
+  --navy-dark:#081f42;
+  --orange:#E8751A;
+  --orange-dark:#c9620f;
+  --white:#FFFFFF;
+  --bg-soft:#F4F6F9;
+  --text:#1B222C;
+  --text-muted:#5A6472;
+  --border:#E4E8EF;
+  --radius:10px;
+  --shadow:0 4px 18px rgba(11,45,92,0.10);
+  --maxw:1180px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--text);background:var(--white);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+h1,h2,h3,h4{line-height:1.2;font-weight:800;color:var(--navy)}
+h2{font-size:clamp(1.5rem,4vw,2.1rem);margin-bottom:10px}
+h3{font-size:1.15rem;margin-bottom:8px}
+.section{padding:56px 0}
+.section-soft{background:var(--bg-soft)}
+.section-navy{background:var(--navy);color:var(--white)}
+.section-navy h2,.section-navy h3{color:var(--white)}
+.eyebrow{display:inline-block;color:var(--orange);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.78rem;margin-bottom:8px}
+.lede{color:var(--text-muted);max-width:640px;margin-bottom:28px}
+.section-navy .lede{color:#c9d6ea}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:8px;font-weight:700;font-size:.98rem;border:2px solid transparent;transition:transform .15s ease,box-shadow .15s ease;cursor:pointer;min-height:48px}
+.btn-cta{background:var(--orange);color:var(--white)}
+.btn-cta:hover{background:var(--orange-dark);transform:translateY(-1px)}
+.btn-outline{background:transparent;border-color:var(--white);color:var(--white)}
+.btn-outline:hover{background:rgba(255,255,255,.12)}
+.btn-outline-navy{background:transparent;border-color:var(--navy);color:var(--navy)}
+.btn-outline-navy:hover{background:var(--navy);color:var(--white)}
+.btn-block{width:100%;justify-content:center}
+.btn-sm{padding:10px 18px;font-size:.88rem;min-height:auto}
+
+/* Header */
+#header-wrap{background:var(--navy);position:sticky;top:0;z-index:60;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.topbar{background:var(--navy-dark);color:#cfe0f7;font-size:.82rem}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding:6px 20px;flex-wrap:wrap;gap:6px}
+.topbar a{color:#cfe0f7}
+.topbar a:hover{color:var(--orange)}
+.navrow{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--white);font-weight:800;font-size:1.2rem}
+.brand-mark{width:38px;height:38px;border-radius:8px;background:var(--orange);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.brand-sub{display:block;font-size:.68rem;font-weight:500;color:#a9bfe0;letter-spacing:.03em}
+#PageList1{margin:0}
+#PageList1 .widget-content{margin:0}
+.navlinks{display:flex;gap:26px;align-items:center}
+.navlinks a{color:#e7edf7;font-weight:600;font-size:.95rem;padding:6px 2px;border-bottom:2px solid transparent}
+.navlinks a:hover{color:var(--white);border-color:var(--orange)}
+.nav-cta{margin-left:6px}
+.navtoggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.navtoggle span{width:26px;height:2px;background:var(--white);display:block}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-dark) 100%);color:var(--white);padding:64px 0 56px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.hero h1{color:var(--white);font-size:clamp(2rem,5vw,2.8rem);margin-bottom:16px}
+.hero p{color:#cfe0f7;font-size:1.08rem;max-width:520px;margin-bottom:26px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-photo{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius);padding:18px;text-align:center;color:#a9bfe0;font-size:.85rem}
+.hero-photo img{border-radius:6px;margin-bottom:10px}
+
+/* Trust bar */
+.trustbar{background:var(--white);border-bottom:1px solid var(--border)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.trust-item{display:flex;align-items:center;gap:10px;padding:18px 16px;border-right:1px solid var(--border);font-weight:700;font-size:.92rem;color:var(--navy)}
+.trust-item:last-child{border-right:none}
+.trust-ico{color:var(--orange);font-size:1.2rem;flex-shrink:0}
+
+/* Services grid (icon grid) */
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.svc-tile{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:20px 16px;text-align:center;transition:box-shadow .15s ease,transform .15s ease}
+.svc-tile:hover{box-shadow:var(--shadow);transform:translateY(-2px);border-color:var(--orange)}
+.svc-ico{width:46px;height:46px;border-radius:50%;background:var(--bg-soft);color:var(--orange);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:1.35rem}
+.svc-tile span{display:block;font-weight:700;font-size:.9rem;color:var(--navy)}
+
+/* Cards / brands strip */
+.brand-strip{display:flex;flex-wrap:wrap;gap:12px}
+.brand-chip{background:var(--white);border:1px solid var(--border);border-radius:30px;padding:10px 20px;font-weight:700;color:var(--navy);font-size:.92rem}
+
+/* Gallery */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gal-item{border-radius:var(--radius);overflow:hidden;background:var(--bg-soft);border:1px solid var(--border);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:.82rem;text-align:center;padding:10px;position:relative}
+.gal-item img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.gal-cap{position:relative;z-index:1;background:rgba(11,45,92,.82);color:#fff;padding:5px 10px;border-radius:4px;font-weight:600}
+
+/* About snippet / two-col */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+
+/* Footer */
+#footer-wrap{background:var(--navy-dark);color:#c9d6ea}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;padding:48px 0 24px}
+.footer-grid h4{color:var(--white);font-size:1rem;margin-bottom:14px}
+.footer-grid p,.footer-grid li,.footer-grid a{color:#aebedb;font-size:.9rem;margin-bottom:8px;display:block}
+.footer-grid a:hover{color:var(--orange)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:16px 20px;text-align:center;font-size:.82rem;color:#8ea1c6}
+.footer-map{border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.15);margin-top:10px}
+.footer-map iframe{width:100%;height:160px;border:0;display:block}
+
+/* Sticky mobile CTA bar */
+.sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;background:var(--white);box-shadow:0 -4px 16px rgba(0,0,0,.15);padding:10px 12px;gap:10px}
+.sticky-cta a{flex:1;justify-content:center}
+
+/* Generic page content (used by Pages: Services, About, etc.) */
+.page-content{padding:44px 0 60px}
+.page-content h1{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:14px}
+.page-content h2{margin-top:34px;padding-top:8px;border-top:1px solid var(--border)}
+.page-content h2:first-of-type{border-top:none;margin-top:6px}
+.page-content h3{margin-top:22px;color:var(--navy)}
+.page-content p{color:var(--text-muted);margin-bottom:14px;max-width:760px}
+.page-content .btn-cta{margin:6px 0 22px}
+.page-hero{background:var(--navy);color:#fff;padding:40px 0}
+.page-hero h1{color:#fff;margin-bottom:8px}
+.page-hero p{color:#cfe0f7;max-width:640px}
+
+/* Blog list */
+.blog-list article{border-bottom:1px solid var(--border);padding:22px 0}
+.blog-list h3 a:hover{color:var(--orange)}
+.blog-list .post-meta{color:var(--text-muted);font-size:.82rem;margin-bottom:6px}
+.blog-list .post-snippet{color:var(--text-muted)}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-photo{order:-1}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .trust-item{border-right:none;border-bottom:1px solid var(--border)}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .two-col{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;padding:36px 0 20px}
+}
+@media (max-width:720px){
+  .navlinks{position:fixed;top:0;right:0;bottom:0;width:78%;max-width:300px;background:var(--navy);flex-direction:column;align-items:flex-start;padding:80px 24px 24px;transform:translateX(100%);transition:transform .25s ease;z-index:65}
+  .navlinks.open{transform:translateX(0)}
+  .navlinks a{width:100%;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .navtoggle{display:flex}
+  .nav-cta{margin-left:0;margin-top:10px;width:100%}
+  .sticky-cta{display:flex}
+  .page-content{padding-bottom:90px}
+  body{padding-bottom:0}
+}
+@media (max-width:520px){
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .gal-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .topbar .wrap{justify-content:center;text-align:center}
+}
+]]></b:skin>
+</head>
+<body>
+
+<div id='header-wrap'>
+  <div class='topbar'>
+    <div class='wrap'>
+      <span>Mon&#8211;Sat, 8am&#8211;6pm &#183; 43 Ojekunle, Papa Ajao, Mushin Way, Matori, Lagos</span>
+      <span><a href='tel:+2347037520976'>Call/WhatsApp: +234 703 752 0976</a></span>
+    </div>
+  </div>
+  <b:section id='header' maxwidgets='1' showaddelement='false'>
+    <b:widget id='Header1' locked='true' title='Oluwanisholaautomobile' type='Header' version='2'>
+      <b:widget-settings>
+        <b:widget-setting name='displayUrl'/>
+        <b:widget-setting name='displayHeight'>0</b:widget-setting>
+        <b:widget-setting name='sectionWidth'>0</b:widget-setting>
+        <b:widget-setting name='useImage'>false</b:widget-setting>
+        <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+        <b:widget-setting name='displayWidth'>0</b:widget-setting>
+        <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
+      </b:widget-settings>
+      <b:includable id='main'>
+        <div class='navrow'>
+          <a class='brand' expr:href='data:blog.homepageUrl'>
+            <span class='brand-mark'>&#128663;</span>
+            <span>Oluwanisholaautomobile<span class='brand-sub'>Auto Repair &amp; Mobile Mechanic, Lagos</span></span>
+          </a>
+          <button aria-label='Menu' class='navtoggle' id='navToggle' type='button'><span/><span/><span/></button>
+          <nav class='navlinks' id='navLinks'>
+            <b:section id='navbar-inner' maxwidgets='1' showaddelement='false'>
+              <b:widget id='PageList1' locked='true' title='' type='PageList' version='2'>
+                <b:includable id='main'>
+                  <b:loop values='data:links' var='link'>
+                    <a expr:href='data:link.href'><data:link.title/></a>
+                  </b:loop>
+                </b:includable>
+              </b:widget>
+            </b:section>
+            <a class='btn btn-cta btn-sm nav-cta' href='https://wa.me/2347037520976?text=Hi%20Oluwanisholaautomobile%2C%20I%27d%20like%20a%20quote' target='_blank'>Contact for Price</a>
+          </nav>
+        </div>
+      </b:includable>
+    </b:widget>
+  </b:section>
+</div>
+
+<b:section id='main' maxwidgets='1' showaddelement='false'>
+  <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2'>
+    <b:widget-settings>
+      <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+      <b:widget-setting name='style.textcolor'/>
+    </b:widget-settings>
+    <b:includable id='main' var='top'>
+
+      <b:if cond='data:view.isHomepage'>
+        <!-- ================= HOMEPAGE ================= -->
+
+        <section class='hero'>
+          <div class='wrap hero-grid'>
+            <div>
+              <span class='eyebrow'>Mushin &#183; Matori &#183; Lagos</span>
+              <h1>Trusted auto repair experts in Mushin, Lagos &#8212; over 10 years of experience.</h1>
+              <p>From engine diagnostics to panel beating, electrical faults to full body refinishing &#8212; we service all makes and models, with home and mobile mechanic visits available for eligible repairs and emergency callouts.</p>
+              <div class='hero-actions'>
+                <a class='btn btn-cta' href='https://wa.me/2347037520976?text=Hi%20Oluwanisholaautomobile%2C%20I%27d%20like%20a%20quote' target='_blank'>Contact for Price on WhatsApp</a>
+                <a class='btn btn-outline' href='tel:+2347037520976'>Call Now</a>
+              </div>
+            </div>
+            <div class='hero-photo'>
+              <img alt='Oluwanisholaautomobile workshop, Mushin Lagos' src='https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=700&amp;q=60'/>
+              <span>Our workshop on Ojekunle, Papa Ajao &#8212; Matori, Lagos</span>
+            </div>
+          </div>
+        </section>
+
+        <section class='trustbar'>
+          <div class='wrap trust-grid'>
+            <div class='trust-item'><span class='trust-ico'>&#9878;</span> 10+ years in business</div>
+            <div class='trust-item'><span class='trust-ico'>&#128663;</span> All makes and models</div>
+            <div class='trust-item'><span class='trust-ico'>&#127968;</span> Home &amp; mobile service available</div>
+            <div class='trust-item'><span class='trust-ico'>&#128205;</span> Mushin, Lagos based</div>
+          </div>
+        </section>
+
+        <section class='section' id='services-preview'>
+          <div class='wrap'>
+            <span class='eyebrow'>What we do</span>
+            <h2>Full-service auto repair, under one roof</h2>
+            <p class='lede'>Twelve core services across mechanical, electrical, body and inspection work &#8212; tap any service to learn more.</p>
+            <div class='svc-grid'>
+              <a class='svc-tile' href='/p/services.html#car-diagnostics'><span class='svc-ico'>&#128295;</span><span>Diagnostics &amp; Computer Scanning</span></a>
+              <a class='svc-tile' href='/p/services.html#engine-repair'><span class='svc-ico'>&#9881;</span><span>Engine Repair &amp; Maintenance</span></a>
+              <a class='svc-tile' href='/p/services.html#transmission-gearbox'><span class='svc-ico'>&#128736;</span><span>Transmission &amp; Gearbox</span></a>
+              <a class='svc-tile' href='/p/services.html#brake-suspension'><span class='svc-ico'>&#128692;</span><span>Brake &amp; Suspension</span></a>
+              <a class='svc-tile' href='/p/services.html#steering-wheel'><span class='svc-ico'>&#127918;</span><span>Steering &amp; Wheel</span></a>
+              <a class='svc-tile' href='/p/services.html#auto-electrical'><span class='svc-ico'>&#9889;</span><span>Auto Electrical</span></a>
+              <a class='svc-tile' href='/p/services.html#car-ac'><span class='svc-ico'>&#10052;</span><span>Car Air Conditioning</span></a>
+              <a class='svc-tile' href='/p/services.html#panel-beating'><span class='svc-ico'>&#128296;</span><span>Panel Beating &amp; Body</span></a>
+              <a class='svc-tile' href='/p/services.html#car-painting'><span class='svc-ico'>&#127912;</span><span>Painting &amp; Refinishing</span></a>
+              <a class='svc-tile' href='/p/services.html#car-upholstery'><span class='svc-ico'>&#129681;</span><span>Upholstery &amp; Interior</span></a>
+              <a class='svc-tile' href='/p/services.html#vehicle-inspection'><span class='svc-ico'>&#128269;</span><span>Vehicle Inspection</span></a>
+              <a class='svc-tile' href='/p/services.html#mobile-emergency'><span class='svc-ico'>&#128660;</span><span>Mobile &amp; Emergency</span></a>
+            </div>
+          </div>
+        </section>
+
+        <section class='section section-soft'>
+          <div class='wrap'>
+            <span class='eyebrow'>Specialist knowledge</span>
+            <h2>Brands we service</h2>
+            <p class='lede'>Deep, brand-specific experience &#8212; not just a &#8220;we fix everything&#8221; workshop.</p>
+            <div class='brand-strip'>
+              <span class='brand-chip'>Toyota</span>
+              <span class='brand-chip'>Lexus</span>
+              <span class='brand-chip'>Honda</span>
+              <span class='brand-chip'>Kia</span>
+              <span class='brand-chip'>Hyundai</span>
+              <span class='brand-chip'>Ford</span>
+              <span class='brand-chip'>Chevrolet</span>
+              <span class='brand-chip'>Range Rover / Land Rover</span>
+            </div>
+            <p style='margin-top:20px'><a class='btn btn-outline-navy btn-sm' href='/p/brands-we-service.html'>See all brands we service &#8594;</a></p>
+          </div>
+        </section>
+
+        <section class='section' id='gallery-preview'>
+          <div class='wrap'>
+            <span class='eyebrow'>Proof of work</span>
+            <h2>Recent jobs from our workshop</h2>
+            <p class='lede'>A look at diagnostics, body work and interior jobs completed for our customers.</p>
+            <div class='gal-grid'>
+              <div class='gal-item'><img alt='Panel beating before and after, Lagos' src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500&amp;q=60'/><span class='gal-cap'>Body repair &#8212; before/after</span></div>
+              <div class='gal-item'><img alt='Car engine diagnostics scanning' src='https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=500&amp;q=60'/><span class='gal-cap'>Computer diagnostics</span></div>
+              <div class='gal-item'><img alt='Car spray painting booth' src='https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=500&amp;q=60'/><span class='gal-cap'>Painting &amp; refinishing</span></div>
+              <div class='gal-item'><img alt='Auto upholstery interior work' src='https://images.unsplash.com/photo-1541348263662-e068662d82af?w=500&amp;q=60'/><span class='gal-cap'>Interior upholstery</span></div>
+              <div class='gal-item'><img alt='Mechanic workshop tools' src='https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=500&amp;q=60'/><span class='gal-cap'>Our workshop</span></div>
+              <div class='gal-item'><img alt='Mobile mechanic roadside repair' src='https://images.unsplash.com/photo-1632823469850-2f77dd9c7b93?w=500&amp;q=60'/><span class='gal-cap'>Mobile callout</span></div>
+            </div>
+            <p style='margin-top:20px'><a class='btn btn-outline-navy btn-sm' href='/p/gallery.html'>View full gallery &#8594;</a></p>
+          </div>
+        </section>
+
+        <section class='section section-soft'>
+          <div class='wrap two-col'>
+            <div>
+              <span class='eyebrow'>About us</span>
+              <h2>Over 10 years keeping Lagos on the road</h2>
+              <p class='lede'>Oluwanisholaautomobile has spent more than a decade repairing and maintaining vehicles from our workshop in Matori, Mushin &#8212; building a five-star reputation the hands-on way, one honest repair at a time. Today we combine that experience with computerized diagnostics, full body and electrical capability, and mobile callouts across Lagos.</p>
+              <a class='btn btn-outline-navy' href='/p/about.html'>Read our story &#8594;</a>
+            </div>
+            <div class='hero-photo' style='background:var(--white);border-color:var(--border);color:var(--text-muted)'>
+              <img alt='Oluwanisholaautomobile mechanic team at work' src='https://images.unsplash.com/photo-1632823469850-2f77dd9c7b93?w=700&amp;q=60'/>
+              <span>Hands-on repair work, every day</span>
+            </div>
+          </div>
+        </section>
+
+        <section class='section section-navy'>
+          <div class='wrap' style='text-align:center'>
+            <h2>Need your car looked at today?</h2>
+            <p class='lede' style='margin:0 auto 22px'>Message us on WhatsApp with your car&#8217;s make, model and the issue &#8212; we&#8217;ll get back to you with next steps and a price.</p>
+            <a class='btn btn-cta' href='https://wa.me/2347037520976?text=Hi%20Oluwanisholaautomobile%2C%20I%27d%20like%20a%20quote' target='_blank'>Contact for Price on WhatsApp</a>
+          </div>
+        </section>
+
+      <b:elseif cond='data:view.isPost or data:view.isPage'/>
+        <!-- ================= SINGLE PAGE / POST ================= -->
+        <b:loop values='data:posts' var='post'>
+          <article>
+            <b:if cond='data:view.isPost'>
+              <div class='page-hero'><div class='wrap'>
+                <h1><data:post.title/></h1>
+                <p>Oluwanisholaautomobile Blog</p>
+              </div></div>
+              <div class='wrap page-content'>
+                <data:post.body/>
+                <p style='margin-top:30px'><a class='btn btn-cta' href='https://wa.me/2347037520976?text=Hi%20Oluwanisholaautomobile%2C%20I%20read%20your%20blog%20and%20need%20help' target='_blank'>Contact for Price on WhatsApp</a></p>
+              </div>
+            <b:else/>
+              <div class='wrap page-content'>
+                <data:post.body/>
+              </div>
+            </b:if>
+          </article>
+        </b:loop>
+
+      <b:else/>
+        <!-- ================= BLOG LIST / LABEL ARCHIVE ================= -->
+        <div class='page-hero'><div class='wrap'>
+          <h1>From the Workshop</h1>
+          <p>Car care tips, maintenance guides and local driving advice from Oluwanisholaautomobile, Mushin, Lagos.</p>
+        </div></div>
+        <div class='wrap page-content blog-list'>
+          <b:loop values='data:posts' var='post'>
+            <article>
+              <h3><a expr:href='data:post.url'><data:post.title/></a></h3>
+              <p class='post-meta'><data:post.date/></p>
+              <p class='post-snippet'><data:post.snippet/></p>
+              <a class='btn btn-outline-navy btn-sm' expr:href='data:post.url'>Read more &#8594;</a>
+            </article>
+          </b:loop>
+          <b:include name='blogPager'/>
+        </div>
+      </b:if>
+
+    </b:includable>
+    <b:includable id='blogPager'>
+      <div style='display:flex;justify-content:space-between;padding-top:20px'>
+        <b:if cond='data:olderPageUrl'><a expr:href='data:olderPageUrl'>&#8592; Older posts</a></b:if>
+        <b:if cond='data:newerPageUrl'><a expr:href='data:newerPageUrl'>Newer posts &#8594;</a></b:if>
+      </div>
+    </b:includable>
+  </b:widget>
+</b:section>
+
+<div id='footer-wrap'>
+  <b:section id='footer' maxwidgets='1' showaddelement='false'>
+    <b:widget id='HTML9' locked='true' title='Footer' type='HTML' version='2'>
+      <b:includable id='main'>
+        <div class='wrap footer-grid'>
+          <div>
+            <h4>Oluwanisholaautomobile</h4>
+            <p>Full-service auto repair and mobile mechanic workshop in Mushin, Lagos. Over 10 years of hands-on experience on all makes and models.</p>
+            <div class='footer-map'>
+              <iframe loading='lazy' src='https://maps.google.com/maps?q=43%20Ojekunle%2C%20Papa%20Ajao%2C%20Mushin%20Way%2C%20Matori%2C%20Lagos&amp;output=embed'/>
+            </div>
+          </div>
+          <div>
+            <h4>Quick Links</h4>
+            <a href='/p/services.html'>Services</a>
+            <a href='/p/brands-we-service.html'>Brands We Service</a>
+            <a href='/p/about.html'>About Us</a>
+            <a href='/p/gallery.html'>Gallery</a>
+            <a href='/search/label/Blog'>Blog</a>
+            <a href='/p/contact.html'>Contact</a>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <a href='tel:+2347037520976'>+234 703 752 0976 (Call/WhatsApp)</a>
+            <a href='mailto:oluwanisholaotomobiles@gmail.com'>oluwanisholaotomobiles@gmail.com</a>
+            <a href='mailto:info@oluwanishola.com'>info@oluwanishola.com</a>
+            <span>43 Ojekunle, Papa Ajao, Mushin Way, Matori, Lagos</span>
+          </div>
+          <div>
+            <h4>Hours</h4>
+            <span>Monday &#8211; Saturday</span>
+            <span>8:00am &#8211; 6:00pm</span>
+            <span>Mobile &amp; emergency visits by arrangement outside these hours &#8212; call or WhatsApp.</span>
+          </div>
+        </div>
+        <div class='footer-bottom'>&#169; <data:blog.title/> &#183; Mushin, Matori, Lagos &#183; All rights reserved.</div>
+      </b:includable>
+    </b:widget>
+  </b:section>
+</div>
+
+<div class='sticky-cta'>
+  <a class='btn btn-cta' href='https://wa.me/2347037520976?text=Hi%20Oluwanisholaautomobile%2C%20I%27d%20like%20a%20quote' target='_blank'>&#128172; WhatsApp</a>
+  <a class='btn btn-outline-navy' href='tel:+2347037520976' style='background:#fff'>&#128222; Call Now</a>
+</div>
+
+<script>
+//&lt;![CDATA[
+(function(){
+  var t = document.getElementById('navToggle');
+  var n = document.getElementById('navLinks');
+  if(t &amp;&amp; n){
+    t.addEventListener('click', function(){ n.classList.toggle('open'); });
+  }
+})();
+//]]&gt;
+</script>
+
+</body>
+</html>
