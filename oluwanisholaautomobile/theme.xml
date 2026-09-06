@@ -387,24 +387,25 @@ h3{font-size:1.15rem;margin-bottom:8px}
           </div>
         </section>
 
-      <b:elseif cond='data:view.isPost or data:view.isPage'/>
-        <!-- ================= SINGLE PAGE / POST ================= -->
+      <b:elseif cond='data:view.isPage'/>
+        <!-- ================= STATIC PAGE (Services, About, Brands, Gallery, Contact) ================= -->
+        <!-- Page content is pasted as full self-contained HTML (its own page-hero band + wrap page-content), same module pattern as the homepage above. -->
+        <b:loop values='data:posts' var='post'>
+          <data:post.body/>
+        </b:loop>
+
+      <b:elseif cond='data:view.isPost'/>
+        <!-- ================= BLOG POST ================= -->
         <b:loop values='data:posts' var='post'>
           <article>
-            <b:if cond='data:view.isPost'>
-              <div class='page-hero'><div class='wrap'>
-                <h1><data:post.title/></h1>
-                <p>Oluwanisholaautomobile Blog</p>
-              </div></div>
-              <div class='wrap page-content'>
-                <data:post.body/>
-                <p style='margin-top:30px'><a class='btn btn-cta' href='https://wa.me/2347037520976?text=Hi%20Oluwanisholaautomobile%2C%20I%20read%20your%20blog%20and%20need%20help' target='_blank'>Contact for Price on WhatsApp</a></p>
-              </div>
-            <b:else/>
-              <div class='wrap page-content'>
-                <data:post.body/>
-              </div>
-            </b:if>
+            <div class='page-hero'><div class='wrap'>
+              <h1><data:post.title/></h1>
+              <p>Oluwanisholaautomobile Blog</p>
+            </div></div>
+            <div class='wrap page-content'>
+              <data:post.body/>
+              <p style='margin-top:30px'><a class='btn btn-cta' href='https://wa.me/2347037520976?text=Hi%20Oluwanisholaautomobile%2C%20I%20read%20your%20blog%20and%20need%20help' target='_blank'>Contact for Price on WhatsApp</a></p>
+            </div>
           </article>
         </b:loop>
 
