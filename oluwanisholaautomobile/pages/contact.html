@@ -1,0 +1,95 @@
+<!-- ============================================================
+Blogger Page: "Contact"
+Paste into a new Blogger Page. Publish with the exact title
+"Contact" so its URL slug is /p/contact.html, matching links used
+elsewhere in the theme.
+Set the page's "Search Description" to:
+"Contact Oluwanisholaautomobile in Mushin, Matori, Lagos — call or
+WhatsApp +234 703 752 0976, email us, or visit 43 Ojekunle. Mon-Sat
+8am-6pm, mobile & emergency visits by arrangement."
+
+Contact form note: Blogger has no built-in form backend. The form
+below is a zero-setup option — it collects name, phone, car details
+and message, then opens a pre-filled WhatsApp chat when submitted
+(no server, no third-party account needed, and it matches how the
+business already works). If you'd rather collect submissions by
+email or in a spreadsheet, swap the script block for a Google Forms
+embed or a Formspree endpoint instead.
+============================================================ -->
+
+<div class="page-hero">
+  <div class="wrap">
+    <h1>Contact Us</h1>
+    <p>Call, WhatsApp, email, or visit us in Matori. We usually reply fastest on WhatsApp.</p>
+  </div>
+</div>
+
+<div class="wrap page-content">
+
+  <div class="two-col" style="align-items:start;gap:44px">
+    <div>
+      <h2 style="margin-top:6px;border-top:none">Get In Touch</h2>
+
+      <p><strong style="color:var(--navy)">Phone / WhatsApp</strong><br/>
+      <a href="tel:+2347037520976">+234 703 752 0976</a></p>
+
+      <p><strong style="color:var(--navy)">Email</strong><br/>
+      <a href="mailto:oluwanisholaotomobiles@gmail.com">oluwanisholaotomobiles@gmail.com</a><br/>
+      <a href="mailto:info@oluwanishola.com">info@oluwanishola.com</a></p>
+
+      <p><strong style="color:var(--navy)">Workshop Address</strong><br/>
+      43 Ojekunle, Papa Ajao, Mushin Way, Matori, Lagos</p>
+
+      <p><strong style="color:var(--navy)">Opening Hours</strong><br/>
+      Monday &#8211; Saturday, 8:00am &#8211; 6:00pm<br/>
+      Mobile, home visit and emergency callouts can be arranged outside these hours by phone or WhatsApp &#8212; just call and let us know what's going on.</p>
+
+      <a class="btn btn-cta" href="https://wa.me/2347037520976?text=Hi%20Oluwanisholaautomobile%2C%20I%27d%20like%20to%20get%20in%20touch" target="_blank" rel="noopener">Chat on WhatsApp</a>
+
+      <div class="footer-map" style="border-color:var(--border);margin-top:26px">
+        <iframe loading="lazy" src="https://maps.google.com/maps?q=43%20Ojekunle%2C%20Papa%20Ajao%2C%20Mushin%20Way%2C%20Matori%2C%20Lagos&amp;output=embed" style="height:220px"></iframe>
+      </div>
+    </div>
+
+    <div>
+      <h2 style="margin-top:6px;border-top:none">Send Us a Message</h2>
+      <p>Fill this in and we'll open WhatsApp with your details ready to send &#8212; or use the direct chat link above if you prefer.</p>
+
+      <form id="contactForm" onsubmit="return false;" style="display:flex;flex-direction:column;gap:12px;max-width:440px">
+        <input type="text" id="cf-name" placeholder="Your name" required="required" style="padding:12px 14px;border:1px solid var(--border);border-radius:8px;font:inherit"/>
+        <input type="tel" id="cf-phone" placeholder="Your phone number" required="required" style="padding:12px 14px;border:1px solid var(--border);border-radius:8px;font:inherit"/>
+        <input type="text" id="cf-car" placeholder="Car make &amp; model (e.g. Toyota Camry 2012)" style="padding:12px 14px;border:1px solid var(--border);border-radius:8px;font:inherit"/>
+        <textarea id="cf-message" placeholder="What's going on with your car?" required="required" rows="4" style="padding:12px 14px;border:1px solid var(--border);border-radius:8px;font:inherit;resize:vertical"></textarea>
+        <button type="button" id="cf-submit" class="btn btn-cta btn-block">Send via WhatsApp</button>
+        <p id="cf-error" style="color:#c0392b;font-size:.85rem;display:none">Please fill in your name, phone number and message.</p>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<script>
+//<![CDATA[
+(function(){
+  var btn = document.getElementById('cf-submit');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    var name = document.getElementById('cf-name').value.trim();
+    var phone = document.getElementById('cf-phone').value.trim();
+    var car = document.getElementById('cf-car').value.trim();
+    var message = document.getElementById('cf-message').value.trim();
+    var errorEl = document.getElementById('cf-error');
+    if(!name || !phone || !message){
+      errorEl.style.display = 'block';
+      return;
+    }
+    errorEl.style.display = 'none';
+    var text = 'Hi Oluwanisholaautomobile, my name is ' + name +
+      ' (phone: ' + phone + ').' +
+      (car ? ' Car: ' + car + '.' : '') +
+      ' ' + message;
+    window.open('https://wa.me/2347037520976?text=' + encodeURIComponent(text), '_blank');
+  });
+})();
+//]]>
+</script>
