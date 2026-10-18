@@ -79,12 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrim = document.querySelector('.nav-scrim');
   const closeBtn = document.querySelector('.drawer-close');
 
-  const openDrawer = () => { drawer?.classList.add('open'); scrim?.classList.add('open'); };
-  const closeDrawer = () => { drawer?.classList.remove('open'); scrim?.classList.remove('open'); };
+  const openDrawer = () => { drawer?.classList.add('open'); scrim?.classList.add('open'); toggle?.setAttribute('aria-expanded', 'true'); document.body.classList.add('nav-open'); };
+  const closeDrawer = () => { drawer?.classList.remove('open'); scrim?.classList.remove('open'); toggle?.setAttribute('aria-expanded', 'false'); document.body.classList.remove('nav-open'); };
 
   toggle?.addEventListener('click', openDrawer);
   closeBtn?.addEventListener('click', closeDrawer);
   scrim?.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
   drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 
   /* Portfolio filter (portfolio.html) */
@@ -111,12 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const values = new FormData(form);
     const subject = encodeURIComponent('Portfolio enquiry — ' + (values.get('service') || 'New project'));
     const body = encodeURIComponent(
-      'Name: ' + (values.get('name') || '') + '\\n' +
-      'Email: ' + (values.get('email') || '') + '\\n' +
-      'Company: ' + (values.get('company') || '') + '\\n' +
-      'Service: ' + (values.get('service') || '') + '\\n' +
-      'Budget: ' + (values.get('budget') || 'Not specified') + '\\n\\n' +
-      'Project details:\\n' + (values.get('details') || '')
+      'Name: ' + (values.get('name') || '') + '\n' +
+      'Email: ' + (values.get('email') || '') + '\n' +
+      'Company: ' + (values.get('company') || '') + '\n' +
+      'Service: ' + (values.get('service') || '') + '\n' +
+      'Budget: ' + (values.get('budget') || 'Not specified') + '\n\n' +
+      'Project details:\n' + (values.get('details') || '')
     );
     window.location.href = 'mailto:info@adisaabiodunsunday.com?subject=' + subject + '&body=' + body;
     const status = document.querySelector('#form-status');
