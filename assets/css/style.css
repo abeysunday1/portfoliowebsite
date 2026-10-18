@@ -611,3 +611,19 @@ section{ padding: var(--section-y) 0; }
   .tools-ticker .ticker-track{ animation: none; }
   .hero::before, .hero::after{ animation: none; }
 }
+
+
+/* Concise, conversion-focused service pricing */
+.pricing-grid{align-items:stretch;gap:1.25rem}
+.pricing-card{display:flex;flex-direction:column;height:100%;padding:clamp(1.25rem,2.5vw,2rem);border:1px solid var(--border,#e5e7eb);border-radius:1rem;background:var(--white,#fff)}
+.pricing-card h3{margin:.5rem 0}
+.pricing-card>p{line-height:1.65}
+.pricing-card .price{display:flex;align-items:baseline;gap:.4rem;margin:1rem 0 1.25rem}
+.pricing-card .price strong{font-size:clamp(1.7rem,3vw,2.25rem);letter-spacing:-.04em;line-height:1.1}
+.pricing-card .price span{font-size:.9rem;opacity:.72}
+.pricing-card .about-list{display:grid;gap:.7rem;margin:0 0 1.5rem;padding:0;list-style:none}
+.pricing-card .about-list li{line-height:1.5}
+.pricing-card .about-list li:before{content:"✓";display:inline-block;margin-right:.55rem;font-weight:700}
+.pricing-card .btn{margin-top:auto}
+.pricing-featured{border:1.5px solid var(--blue,#3b82f6);box-shadow:0 12px 36px rgba(15,23,42,.07)}
+.pricing-note{max-width:780px;margin:1.5rem auto 0;font-size:.9rem;line-height:1.7;opacity:.8;text-align:center}
