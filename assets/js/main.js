@@ -104,16 +104,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* Contact form (client-side placeholder only — wire to a real endpoint before launch) */
+  /* Contact form: open a prefilled email draft (no backend is configured yet). */
   const form = document.querySelector('#contact-form');
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
+    const values = new FormData(form);
+    const subject = encodeURIComponent('Portfolio enquiry — ' + (values.get('service') || 'New project'));
+    const body = encodeURIComponent(
+      'Name: ' + (values.get('name') || '') + '\\n' +
+      'Email: ' + (values.get('email') || '') + '\\n' +
+      'Company: ' + (values.get('company') || '') + '\\n' +
+      'Service: ' + (values.get('service') || '') + '\\n' +
+      'Budget: ' + (values.get('budget') || 'Not specified') + '\\n\\n' +
+      'Project details:\\n' + (values.get('details') || '')
+    );
+    window.location.href = 'mailto:info@adisaabiodunsunday.com?subject=' + subject + '&body=' + body;
     const status = document.querySelector('#form-status');
     if (status) {
-      status.textContent = 'Thanks for reaching out. This form is a front-end placeholder — connect it to your email service or CRM to start receiving messages.';
+      status.textContent = 'Your email app should open with your project details. Review the message and press Send to submit your enquiry.';
       status.style.display = 'block';
     }
-    form.reset();
   });
 
 });
