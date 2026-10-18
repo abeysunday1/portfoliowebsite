@@ -84,7 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   toggle?.addEventListener('click', openDrawer);
   closeBtn?.addEventListener('click', closeDrawer);
-  scrim?.addEventListener('click', closeDrawer);\n  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+  scrim?.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
   drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 
   /* Portfolio filter (portfolio.html) */
@@ -111,12 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const values = new FormData(form);
     const subject = encodeURIComponent('Portfolio enquiry — ' + (values.get('service') || 'New project'));
     const body = encodeURIComponent(
-      'Name: ' + (values.get('name') || '') + '\\n' +
-      'Email: ' + (values.get('email') || '') + '\\n' +
-      'Company: ' + (values.get('company') || '') + '\\n' +
-      'Service: ' + (values.get('service') || '') + '\\n' +
-      'Budget: ' + (values.get('budget') || 'Not specified') + '\\n\\n' +
-      'Project details:\\n' + (values.get('details') || '')
+      'Name: ' + (values.get('name') || '') + '\n' +
+      'Email: ' + (values.get('email') || '') + '\n' +
+      'Company: ' + (values.get('company') || '') + '\n' +
+      'Service: ' + (values.get('service') || '') + '\n' +
+      'Budget: ' + (values.get('budget') || 'Not specified') + '\n\n' +
+      'Project details:\n' + (values.get('details') || '')
     );
     window.location.href = 'mailto:info@adisaabiodunsunday.com?subject=' + subject + '&body=' + body;
     const status = document.querySelector('#form-status');
