@@ -79,12 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrim = document.querySelector('.nav-scrim');
   const closeBtn = document.querySelector('.drawer-close');
 
-  const openDrawer = () => { drawer?.classList.add('open'); scrim?.classList.add('open'); };
-  const closeDrawer = () => { drawer?.classList.remove('open'); scrim?.classList.remove('open'); };
+  const openDrawer = () => { drawer?.classList.add('open'); scrim?.classList.add('open'); toggle?.setAttribute('aria-expanded', 'true'); document.body.classList.add('nav-open'); };
+  const closeDrawer = () => { drawer?.classList.remove('open'); scrim?.classList.remove('open'); toggle?.setAttribute('aria-expanded', 'false'); document.body.classList.remove('nav-open'); };
 
   toggle?.addEventListener('click', openDrawer);
   closeBtn?.addEventListener('click', closeDrawer);
-  scrim?.addEventListener('click', closeDrawer);
+  scrim?.addEventListener('click', closeDrawer);\n  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
   drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 
   /* Portfolio filter (portfolio.html) */
