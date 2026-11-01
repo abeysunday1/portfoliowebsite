@@ -1,0 +1,9 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Secure by default. Add narrowly scoped rules when the data model is finalized.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
